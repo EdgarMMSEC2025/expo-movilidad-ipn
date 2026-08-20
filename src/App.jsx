@@ -196,7 +196,6 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <a href="#home" className="flex items-center gap-2 group">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#6A0032] to-[#8B0042] flex items-center justify-center text-white font-bold text-xl shadow-lg transform group-hover:rotate-12 transition-transform">
@@ -208,7 +207,6 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a 
@@ -226,7 +224,6 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -239,7 +236,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100">
           <div className="px-4 pt-2 pb-6 space-y-1">
@@ -372,7 +368,6 @@ const About = () => {
           </Reveal>
         </div>
 
-        {/* Stats Section */}
         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6">
           {STATS.map((stat, i) => (
             <Reveal key={stat.id} type="fade-up" delay={i * 100}>
@@ -406,7 +401,6 @@ const Fleet = () => {
           subtitle="Conoce de cerca los vehículos que están redefiniendo la forma en que nos movemos. Desde compactos urbanos hasta SUVs de alto rendimiento."
         />
 
-        {/* Brands Interactivos */}
         <Reveal type="fade-in" delay={200}>
           <div className="mb-16">
             <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Filtrar por Marcas Participantes</p>
@@ -436,7 +430,6 @@ const Fleet = () => {
           </div>
         </Reveal>
 
-        {/* Vehicle Grid Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredVehicles.map((vehicle, i) => (
             <Reveal key={vehicle.id} type="fade-up" delay={(i % 3) * 100}>
@@ -806,4 +799,3 @@ export default function App() {
     </div>
   );
 }
-```eof
