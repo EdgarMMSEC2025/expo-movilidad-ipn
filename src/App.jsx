@@ -94,10 +94,9 @@ const PROGRAM_SCHEDULE = [
     events: [
       { time: '10:00', title: 'Inicio de la expo', speaker: 'Acceso General', category: 'Apertura' },
       { time: '11:00', title: 'Inauguración Oficial', speaker: 'Autoridades IPN', category: 'Inauguración' },
+      { time: '11:30', title: 'Lanzamiento KIA EV 3', speaker: 'KIA', category: 'Lanzamiento' },
       { time: '12:00', title: 'Lanzamiento GWM Ora 5', speaker: 'GWM', category: 'Lanzamiento' },
-      { time: '13:00', title: 'Lanzamiento KIA EV 3', speaker: 'KIA', category: 'Lanzamiento' },
-      { time: '15:00', title: 'Presentación Proyecto electromovilidad sustentable IPN 2026', speaker: 'Investigadores IPN', category: 'Presentación' },
-      { time: '16:00', title: 'Presentación conversión Buggie gasolina a híbrido por ESIME Zacatenco', speaker: 'ESIME Zacatenco', category: 'Presentación' }
+      { time: '15:00', title: 'Presentación Proyecto electromovilidad sustentable IPN 2026', speaker: 'Investigadores IPN', category: 'Presentación' }
     ]
   },
   {
@@ -224,34 +223,37 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           
-          {/* Logos institucionales: Izquierda ESIQIE, Centro IPN, Derecha ESIME */}
-          <div className="flex items-center gap-2 sm:gap-4">
-            <a href="#home" className="flex items-center gap-2 group">
-              <img 
-                src="https://www.esiqie.ipn.mx/assets/files/esiqie/img/pleca-de-logos/logoESIQIE.png" 
-                alt="Logo ESIQIE IPN" 
-                className="h-10 sm:h-12 w-auto object-contain bg-white/80 p-1 rounded" 
-                onError={(e) => { e.target.src = "https://www.ipn.mx/assets/files/main/img/logo-ipn.png"; }}
-              />
-            </a>
+          {/* ESIQIE a la izquierda, IPN al centro, ESIME a la derecha */}
+          <div className="flex items-center justify-between w-full lg:w-auto gap-4">
+            {/* ESIQIE - Izquierda */}
             <a href="#home" className="flex items-center">
               <img 
-                src="https://www.ipn.mx/assets/files/main/img/logo-ipn.png" 
-                alt="Logo IPN Oficial" 
+                src="https://esiqie.ipn.mx/assets/files/esiqie/assets/img/escudo.png" 
+                alt="Escudo ESIQIE IPN" 
+                className="h-10 sm:h-12 w-auto object-contain bg-white/90 p-1 rounded shadow-sm" 
+              />
+            </a>
+            
+            {/* IPN - Centro */}
+            <a href="#home" className="flex items-center">
+              <img 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSriEvtiSVZmxMMk5_280rt8BNcuwz4YSgz9yB37M0C9w&s=10" 
+                alt="Logo IPN" 
                 className="h-10 sm:h-12 w-auto object-contain" 
               />
             </a>
+
+            {/* ESIME - Derecha */}
             <a href="#home" className="flex items-center">
               <img 
-                src="https://www.esimez.ipn.mx/assets/files/esimez/img/pleca-logos/esime.png" 
-                alt="Logo ESIME IPN" 
-                className="h-9 sm:h-11 w-auto object-contain bg-white/80 p-1 rounded"
-                onError={(e) => { e.target.src = "https://www.ipn.mx/assets/files/main/img/logo-ipn.png"; }}
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmwAMAZKhKfHdVn0e7BpPFEyXWg_nuO5fNTe7XL8ctY1ZSgY-nWGX22UVS&s=10" 
+                alt="Logo ESIME" 
+                className="h-10 sm:h-12 w-auto object-contain bg-white/90 p-1 rounded shadow-sm"
               />
             </a>
           </div>
 
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8 ml-8">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
@@ -268,7 +270,7 @@ const Navbar = () => {
             </a>
           </div>
 
-          <div className="lg:hidden flex items-center">
+          <div className="lg:hidden flex items-center ml-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md text-slate-800"
@@ -368,8 +370,8 @@ const About = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#6A0032] to-[#16A34A] rounded-2xl transform translate-x-4 translate-y-4 opacity-20 blur-lg"></div>
               <img 
-                src="https://images.unsplash.com/photo-1663143586071-7975b9f93ee7?auto=format&fit=crop&q=80&w=1000" 
-                alt="Carport de carga para vehículos eléctricos" 
+                src="https://rerenergygroup.com.mx/wp-content/uploads/estacion-de-carga-electrica-para-autos-que-es-un-carport-solar.webp" 
+                alt="Carport solar y estación de carga para vehículos eléctricos" 
                 className="relative rounded-2xl shadow-2xl object-cover h-[500px] w-full"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100">
@@ -478,7 +480,6 @@ const Fleet = () => {
           {filteredVehicles.map((vehicle, i) => (
             <Reveal key={vehicle.id} type="fade-up" delay={(i % 3) * 100}>
               <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-                {/* Contenedor con zoom al 250% (scale-250 en hover con transición suave) */}
                 <div className="relative h-60 overflow-hidden bg-slate-900 flex items-center justify-center p-4">
                   <img 
                     src={vehicle.image} 
@@ -634,7 +635,6 @@ const Registration = () => {
                     <p className="text-slate-200 mb-3">
                       Estacionamiento del edificio 1 de ESIME Zacatenco y Centro Cultural Jaime Torres Bodet. CDMX.
                     </p>
-                    {/* Google Maps Embed solicitado */}
                     <div className="rounded-xl overflow-hidden shadow-md border border-white/20">
                       <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.6688233282102!2d-99.1368414326436!3d19.496982991862946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b7692ae4e5%3A0x3ab74018e5a86ad4!2sAparcamiento%2C%20Nueva%20Industrial%20Vallejo%2C%2007700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e1!3m2!1ses-419!2smx!4v1787202296813!5m2!1ses-419!2smx" 
@@ -662,7 +662,7 @@ const Registration = () => {
 
             <div className="relative z-10 mt-16 bg-[#8B0042] rounded-2xl p-6 shadow-inner">
               <h4 className="font-bold mb-3 flex items-center gap-2"><ShieldCheck size={24} className="text-[#16A34A]"/> Acceso Seguro</h4>
-              <p className="text-sm text-slate-200 leading-relaxed">Contamos con estrictos protocolos de protección civil y seguridad en todas las zonas de exhibición para tu tranquilidad.</p>
+              <p className="text-sm text-slate-200 leading-relaxed">Contamos con estrictos protocolos de protección civil, servicios médicos de primer contacto y seguridad en todas las zonas de exhibición para tu tranquilidad.</p>
             </div>
           </div>
 
