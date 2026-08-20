@@ -25,8 +25,6 @@ const BRANDS = [
   "Renault", "BYD", "Audi", "Changan", "VW", "GWM", "Ford", "Mazda", "Hyundai", "Kia", "Toyota", "GAC", "Lexus"
 ];
 
-// ACTUALIZACIÓN DE RUTAS DE IMÁGENES
-// Asumimos que las imágenes están en la carpeta public/FOTOS_AUTOS/
 const VEHICLES = [
   { id: 1, name: 'Megane E-Tech 2026', brand: 'Renault', type: 'BEV', range: '450 km', chargeTime: '30 min (80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.36.09_2.jpeg' },
   { id: 12, name: 'Koleos esprit Alpine', brand: 'Renault', type: 'HEV', range: '241 hp Full Hybrid', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.37.35.jpeg' },
@@ -36,6 +34,7 @@ const VEHICLES = [
   { id: 23, name: 'Yuan Pro DM-i', brand: 'BYD', type: 'PHEV', range: '1,045 km (Combinada)', chargeTime: 'Híbrido Enchufable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.15.50.jpeg' },
   { id: 3, name: 'Q6 e-tron 2026', brand: 'Audi', type: 'BEV', range: '625 km', chargeTime: '21 min (80%)', image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&q=80&w=800' },
   { id: 4, name: 'Deepal S05 2026', brand: 'Changan', type: 'REEV', range: '158 km (EV) / 1,129 km (Total)', chargeTime: '30 min (80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.36.17.jpeg' },
+  { id: 15, name: 'Eado Plus iDD 2026', brand: 'Changan', type: 'PHEV', range: '150 km (EV) / 1,000 km (Total)', chargeTime: '30 min (80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.37.24.jpeg' },
   { id: 51, name: 'Jetta 2027', brand: 'VW', type: 'MHEV', range: 'Alta Eficiencia', chargeTime: 'Combustión / Eficiente', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.20.40.jpeg' },
   { id: 52, name: 'Tiguan 2026', brand: 'VW', type: 'MHEV', range: 'Alta Eficiencia', chargeTime: 'Combustión / Eficiente', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.22.35.jpeg' },
   { id: 61, name: 'Ora 5 2026', brand: 'GWM', type: 'BEV', range: '500 km', chargeTime: '40 min (80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.46.58.jpeg' },
@@ -56,7 +55,6 @@ const VEHICLES = [
   { id: 141, name: 'HYPTEC HT Ultra', brand: 'GAC', type: 'BEV', range: 'Alta Eficiencia', chargeTime: '30 min (80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.55.13.jpeg' },
   { id: 142, name: 'AION UT Standard', brand: 'GAC', type: 'BEV', range: '420 km (NEDC)', chargeTime: 'Rápida / Doméstica', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.54.19.jpeg' },
   { id: 143, name: 'GS7 PHEV 2WD', brand: 'GAC', type: 'PHEV', range: 'Extendida', chargeTime: 'Híbrido Enchufable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.53.14.jpeg' },
-  { id: 15, name: 'Eado Plus iDD 2026', brand: 'Changan', type: 'PHEV', range: '150 km (EV) / 1,000 km (Total)', chargeTime: '30 min (80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.37.24.jpeg' },
   { id: 161, name: 'NX Hybrid 2026', brand: 'Lexus', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.44.14.jpeg' },
   { id: 162, name: 'RX Hybrid Electric 2026', brand: 'Lexus', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.45.25.jpeg' },
 ];
@@ -97,6 +95,7 @@ const useScrollReveal = (options = { threshold: 0.1, rootMargin: '0px 0px -50px 
 
   useEffect(() => {
     const currentRef = ref.current;
+    if (!currentRef) return;
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
@@ -104,7 +103,7 @@ const useScrollReveal = (options = { threshold: 0.1, rootMargin: '0px 0px -50px 
       }
     }, options);
 
-    if (currentRef) observer.observe(currentRef);
+    observer.observe(currentRef);
     return () => {
       if (currentRef) observer.unobserve(currentRef);
     };
@@ -450,7 +449,7 @@ const Fleet = () => {
                     loading="lazy"
                     onError={(e) => {
                       e.target.onerror = null; 
-                      e.target.src = "https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"; // Placeholder si falla la imagen
+                      e.target.src = "https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60";
                     }}
                   />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-xs font-bold px-3 py-1 rounded-full shadow-sm text-slate-800">
@@ -496,7 +495,6 @@ const Program = () => {
           subtitle="Dos días intensivos de aprendizaje, exhibiciones tecnológicas y networking estratégico."
           centered={true}
         />
-        {/* Helper style for SectionHeading in dark mode context */}
         <style dangerouslySetInnerHTML={{__html: `
           #program h2 { color: white !important; }
           #program p { color: #94a3b8 !important; }
@@ -512,7 +510,6 @@ const Program = () => {
               </Reveal>
 
               <div className="relative">
-                {/* Main vertical line desktop */}
                 <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-slate-700 transform -translate-x-1/2"></div>
                 
                 <div className="space-y-12">
@@ -520,10 +517,8 @@ const Program = () => {
                     <Reveal key={`${dayIndex}-${i}`} type={i % 2 === 0 ? 'fade-right' : 'fade-left'} delay={i * 100}>
                       <div className={`relative flex flex-col md:flex-row items-center justify-between w-full ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                         
-                        {/* Dot */}
                         <div className="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-[#16A34A] border-4 border-[#0F172A] transform md:-translate-x-1/2 z-10 shadow-[0_0_15px_rgba(22,163,74,0.6)] hidden md:block"></div>
                         
-                        {/* Content Card */}
                         <div className="w-full md:w-[45%]">
                           <div className="bg-slate-800/80 backdrop-blur-md p-6 lg:p-8 rounded-2xl border border-slate-700 hover:border-[#16A34A]/60 transition-colors shadow-lg">
                             <div className="flex flex-wrap items-center gap-3 mb-3">
@@ -540,7 +535,6 @@ const Program = () => {
                           </div>
                         </div>
                         
-                        {/* Spacer for desktop layout */}
                         <div className="hidden md:block w-[45%]"></div>
                       </div>
                     </Reveal>
@@ -561,7 +555,6 @@ const Registration = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
           
-          {/* Iframe Form Side */}
           <div className="w-full lg:w-3/5 p-4 md:p-8 relative min-h-[600px] flex flex-col">
             <Reveal type="fade-right" className="w-full h-full flex-grow flex flex-col">
               <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 px-4 pt-4">Asegura tu lugar</h2>
@@ -581,9 +574,7 @@ const Registration = () => {
             </Reveal>
           </div>
 
-          {/* Info Side */}
           <div className="w-full lg:w-2/5 bg-[#6A0032] text-white p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
-            {/* Pattern Overlay */}
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
             
             <div className="relative z-10">
@@ -676,7 +667,6 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
         
-        {/* Brand Info */}
         <div className="col-span-1 lg:col-span-5">
           <a href="#home" className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#6A0032] to-[#8B0042] flex items-center justify-center text-white">
@@ -697,7 +687,6 @@ const Footer = () => (
           </div>
         </div>
 
-        {/* Quick Links */}
         <div className="col-span-1 lg:col-span-3 lg:ml-auto">
           <h4 className="text-white font-bold mb-6 uppercase text-sm tracking-wider">Explorar</h4>
           <ul className="space-y-4">
@@ -711,7 +700,6 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* Contact info */}
         <div className="col-span-1 lg:col-span-4">
           <h4 className="text-white font-bold mb-6 uppercase text-sm tracking-wider">Sede del Evento</h4>
           <ul className="space-y-5 text-base text-slate-400">
@@ -747,11 +735,9 @@ const Footer = () => (
 
 export default function App() {
   useEffect(() => {
-    // Configuración SEO Dinámica
     document.title = "Expo Movilidad Sustentable IPN 2026 | El futuro es eléctrico";
     document.documentElement.lang = 'es';
     
-    // Meta Description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -760,20 +746,19 @@ export default function App() {
     }
     metaDescription.content = "Evento oficial del Instituto Politécnico Nacional. Descubre vehículos eléctricos, híbridos, infraestructura de carga y energías renovables. Regístrate gratis.";
 
-    // Schema.org JSON-LD (Estructura de Datos para Eventos)
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Event",
       "name": "Expo Movilidad Sustentable IPN 2026",
-      "startDate": "2026-11-15T09:00-06:00",
-      "endDate": "2026-11-16T18:00-06:00",
+      "startDate": "2026-08-28T10:00-06:00",
+      "endDate": "2026-08-29T17:00-06:00",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "eventStatus": "https://schema.org/EventScheduled",
       "location": {
         "@type": "Place",
-        "name": "Centro Cultural Jaime Torres Bodet IPN",
+        "name": "ESIME Zacatenco IPN",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Av. Luis Enrique Erro S/N",
@@ -802,7 +787,6 @@ export default function App() {
     document.head.appendChild(script);
 
     return () => {
-      // Limpieza (opcional en SPA, buena práctica)
       if (document.head.contains(script)) document.head.removeChild(script);
     }
   }, []);
@@ -822,3 +806,4 @@ export default function App() {
     </div>
   );
 }
+```eof
