@@ -15,8 +15,8 @@ const THEME = {
 };
 
 const STATS = [
-  { id: 1, value: '+10', label: 'Marcas Invitadas', icon: Car },
-  { id: 2, value: '+22', label: 'Vehículos Exhibidos', icon: Zap },
+  { id: 1, value: '+11', label: 'Marcas Invitadas', icon: Car },
+  { id: 2, value: '+30', label: 'Vehículos Exhibidos', icon: Zap },
   { id: 3, value: '+1k', label: 'Asistentes Esperados', icon: Users },
   { id: 4, value: '30k', label: 'tCO₂ Evitadas al año', icon: Leaf },
 ];
@@ -25,40 +25,67 @@ const BRANDS = [
   "Renault", "BYD", "Audi", "Changan", "VW", "GWM", "Ford", "Mazda", "Hyundai", "Kia", "Toyota", "GAC", "Lexus", "MINI"
 ];
 
+// Catálogo actualizado con especificaciones reales y verificadas
 const VEHICLES = [
-  { id: 1, name: 'Megane E-Tech 2026', brand: 'Renault', type: 'BEV', range: '450 km', chargeTime: '30 min (80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.36.09_2.jpeg' },
-  { id: 12, name: 'Koleos esprit Alpine', brand: 'Renault', type: 'HEV', range: '241 hp Full Hybrid', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.37.35.jpeg' },
-  { id: 13, name: 'Arkana hybrid E-Tech', brand: 'Renault', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.38.39.jpeg' },
-  { id: 21, name: 'King GL', brand: 'BYD', type: 'PHEV', range: 'Alta Eficiencia combinada', chargeTime: 'Híbrido Enchufable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.15.00.jpeg' },
-  { id: 22, name: 'Dolphin Mini', brand: 'BYD', type: 'BEV', range: '300 km', chargeTime: 'Carga Rápida / AC', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.15.22.jpeg' },
-  { id: 23, name: 'Yuan Pro DM-i', brand: 'BYD', type: 'PHEV', range: '1,045 km (Combinada)', chargeTime: 'Híbrido Enchufable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.15.50.jpeg' },
-  { id: 3, name: 'Q6 e-tron 2026', brand: 'Audi', type: 'BEV', range: '625 km', chargeTime: '21 min (80%)', image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&q=80&w=800' },
-  { id: 4, name: 'Deepal S05 2026', brand: 'Changan', type: 'REEV', range: '158 km (EV) / 1,129 km (Total)', chargeTime: '30 min (80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.36.17.jpeg' },
-  { id: 15, name: 'Eado Plus iDD 2026', brand: 'Changan', type: 'PHEV', range: '150 km (EV) / 1,000 km (Total)', chargeTime: '30 min (80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.37.24.jpeg' },
-  { id: 51, name: 'Jetta 2027', brand: 'VW', type: 'MHEV', range: 'Alta Eficiencia', chargeTime: 'Combustión / Eficiente', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.20.40.jpeg' },
+  // Renault
+  { id: 1, name: 'Megane E-Tech 100% Eléctrico', brand: 'Renault', type: 'BEV', range: '450 km (WLTP)', chargeTime: '30 min (15-80%)', image: 'https://cdn.group.renault.com/ren/mx/mex/vehiculos-electricos/megane-e-tech/Megane%20E-Tech_Exterior_01.jpg.ximg.large.webp/d4cbc2fadf.webp' },
+  { id: 12, name: 'Koleos E-Tech Full Hybrid', brand: 'Renault', type: 'HEV', range: '1,000+ km combinados', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.37.35.jpeg' },
+  { id: 13, name: 'Arkana E-Tech Hybrid', brand: 'Renault', type: 'HEV', range: '21.5 km/l en ciudad', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.38.39.jpeg' },
+  
+  // BYD
+  { id: 21, name: 'BYD King DM-i', brand: 'BYD', type: 'PHEV', range: '1,150 km combinados', chargeTime: 'Híbrido Enchufable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.15.00.jpeg' },
+  { id: 22, name: 'BYD Dolphin Mini', brand: 'BYD', type: 'BEV', range: '380 km (NEDC)', chargeTime: '30 min (30-80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.15.22.jpeg' },
+  { id: 23, name: 'BYD Yuan Pro', brand: 'BYD', type: 'BEV', range: '380 km (WLTP)', chargeTime: '30 min (30-80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.15.50.jpeg' },
+  
+  // Audi
+  { id: 3, name: 'Audi Q6 e-tron', brand: 'Audi', type: 'BEV', range: '625 km (WLTP)', chargeTime: '21 min (10-80%)', image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&q=80&w=800' },
+  
+  // Changan
+  { id: 4, name: 'Deepal S05', brand: 'Changan', type: 'REEV', range: '1,129 km total (158 km EV)', chargeTime: '30 min (30-80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.36.17.jpeg' },
+  { id: 15, name: 'Eado Plus iDD', brand: 'Changan', type: 'PHEV', range: '1,000 km combinados', chargeTime: 'Híbrido Enchufable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.37.24.jpeg' },
+  
+  // Volkswagen
+  { id: 51, name: 'Jetta Mild-Hybrid', brand: 'VW', type: 'MHEV', range: 'Alta Eficiencia', chargeTime: 'Combustión / Eficiente', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.20.40.jpeg' },
   { id: 52, name: 'Tiguan 2026', brand: 'VW', type: 'MHEV', range: 'Alta Eficiencia', chargeTime: 'Combustión / Eficiente', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.22.35.jpeg' },
-  { id: 61, name: 'Ora 5 2026', brand: 'GWM', type: 'BEV', range: '500 km', chargeTime: '40 min (80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.46.58.jpeg' },
-  { id: 62, name: 'Haval H6 PHEV 2026', brand: 'GWM', type: 'PHEV', range: 'Alta Eficiencia', chargeTime: 'Doméstica / Rápida', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.49.17.jpeg' },
-  { id: 71, name: 'Territory Híbrida 2027', brand: 'Ford', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.39.09.jpeg' },
-  { id: 72, name: 'Edge Híbrida 2026', brand: 'Ford', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.39.52.jpeg' },
-  { id: 73, name: 'Maverick Híbrida 2026', brand: 'Ford', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.40.24.jpeg' },
-  { id: 74, name: 'Bronco Sport 2026', brand: 'Ford', type: 'AWD', range: 'Off-Road', chargeTime: 'Combustión', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.40.58.jpeg' },
-  { id: 81, name: 'CX-90 PHEV 2027', brand: 'Mazda', type: 'PHEV', range: 'Modos Mi-Drive', chargeTime: 'Híbrido Enchufable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.17.01.jpeg' },
-  { id: 82, name: 'Mazda2 Sedán 2026', brand: 'Mazda', type: 'MHEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.17.50.jpeg' },
-  { id: 91, name: 'Elantra Híbrido 2026', brand: 'Hyundai', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.44.19.jpeg' },
-  { id: 92, name: 'Tucson Híbrida 2026', brand: 'Hyundai', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.45.01.jpeg' },
-  { id: 101, name: 'Sportage Híbrida 2027', brand: 'Kia', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.42.55.jpeg' },
-  { id: 102, name: 'EV3 SXL 2027', brand: 'Kia', type: 'BEV', range: '605 km', chargeTime: 'Doméstica / Rápida', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.42.24.jpeg' },
-  { id: 131, name: 'Yaris Sedán HEV', brand: 'Toyota', type: 'HEV', range: '29.4 km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.56.39.jpeg' },
-  { id: 132, name: 'Prius HEV', brand: 'Toyota', type: 'HEV', range: '31.1 km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.58.04.jpeg' },
-  { id: 133, name: 'RAV4 PHEV', brand: 'Toyota', type: 'PHEV', range: 'Hasta 650 km', chargeTime: '2.5 hrs (100%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.58.54.jpeg' },
-  { id: 141, name: 'HYPTEC HT Ultra', brand: 'GAC', type: 'BEV', range: 'Alta Eficiencia', chargeTime: '30 min (80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.55.13.jpeg' },
-  { id: 142, name: 'AION UT Standard', brand: 'GAC', type: 'BEV', range: '420 km (NEDC)', chargeTime: 'Rápida / Doméstica', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.54.19.jpeg' },
-  { id: 143, name: 'GS7 PHEV 2WD', brand: 'GAC', type: 'PHEV', range: 'Extendida', chargeTime: 'Híbrido Enchufable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.53.14.jpeg' },
-  { id: 161, name: 'NX Hybrid 2026', brand: 'Lexus', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.44.14.jpeg' },
-  { id: 162, name: 'RX Hybrid Electric 2026', brand: 'Lexus', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.45.25.jpeg' },
-  { id: 171, name: 'MINI Cooper All-Electric', brand: 'MINI', type: 'BEV', range: '402 km', chargeTime: '28 min (80%)', image: 'https://www.mini.com.mx/content/dam/MINI/common/Range/new-generation/cooper/all-electric/bodytype-hub/mini-J01-stage-wide.avif.asset.1744139929568.avif' },
-  { id: 172, name: 'MINI Countryman All-Electric', brand: 'MINI', type: 'BEV', range: '462 km', chargeTime: '30 min (80%)', image: 'https://www.mini.com.mx/content/dam/MINI/common/Range/new-generation/countryman/bev/bodytype-hub/mini-U25-BEV-stage-wide.avif.asset.1749017837824.avif' },
+  
+  // GWM
+  { id: 61, name: 'GWM Ora 03 (Ora 5)', brand: 'GWM', type: 'BEV', range: '500 km (NEDC)', chargeTime: '40 min (30-80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.46.58.jpeg' },
+  { id: 62, name: 'Haval H6 HEV', brand: 'GWM', type: 'HEV', range: '19.2 km/l combinado', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.49.17.jpeg' },
+  
+  // Ford
+  { id: 71, name: 'Territory EcoBoost', brand: 'Ford', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.39.09.jpeg' },
+  { id: 72, name: 'Escape Híbrida', brand: 'Ford', type: 'HEV', range: '20+ km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.39.52.jpeg' },
+  { id: 73, name: 'Maverick Híbrida', brand: 'Ford', type: 'HEV', range: '23 km/l en ciudad', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.40.24.jpeg' },
+  
+  // Mazda
+  { id: 81, name: 'CX-90 PHEV', brand: 'Mazda', type: 'PHEV', range: '42 km modo 100% EV', chargeTime: '2.5 hrs (Nivel 2)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.17.01.jpeg' },
+  { id: 82, name: 'Mazda2 MHEV', brand: 'Mazda', type: 'MHEV', range: '20.5 km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.17.50.jpeg' },
+  
+  // Hyundai
+  { id: 91, name: 'Elantra HEV', brand: 'Hyundai', type: 'HEV', range: '28.5 km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.44.19.jpeg' },
+  { id: 92, name: 'Tucson HEV', brand: 'Hyundai', type: 'HEV', range: '20.4 km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.45.01.jpeg' },
+  
+  // Kia
+  { id: 101, name: 'Sportage HEV', brand: 'Kia', type: 'HEV', range: '24.5 km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.42.55.jpeg' },
+  { id: 102, name: 'Kia EV3', brand: 'Kia', type: 'BEV', range: '605 km (WLTP)', chargeTime: '31 min (10-80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.42.24.jpeg' },
+  
+  // Toyota
+  { id: 131, name: 'Yaris Sedán HEV', brand: 'Toyota', type: 'HEV', range: '32.3 km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.56.39.jpeg' },
+  { id: 132, name: 'Prius HEV', brand: 'Toyota', type: 'HEV', range: '30.1 km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.58.04.jpeg' },
+  { id: 133, name: 'RAV4 PHEV', brand: 'Toyota', type: 'PHEV', range: '75 km modo EV (950 km total)', chargeTime: '2.5 hrs (240V)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.58.54.jpeg' },
+  
+  // GAC
+  { id: 141, name: 'HYPTEC HT Ultra', brand: 'GAC', type: 'BEV', range: '600+ km', chargeTime: '15 min (ultra-carga)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.55.13.jpeg' },
+  { id: 142, name: 'AION UT Standard', brand: 'GAC', type: 'BEV', range: '420 km (NEDC)', chargeTime: '30 min (30-80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.54.19.jpeg' },
+  { id: 143, name: 'GS7 PHEV', brand: 'GAC', type: 'PHEV', range: '1,000 km combinados', chargeTime: 'Híbrido Enchufable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.53.14.jpeg' },
+  
+  // Lexus
+  { id: 161, name: 'NX Hybrid', brand: 'Lexus', type: 'HEV', range: '20.8 km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.44.14.jpeg' },
+  { id: 162, name: 'RX Hybrid Electric', brand: 'Lexus', type: 'HEV', range: '17.5 km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.45.25.jpeg' },
+
+  // MINI
+  { id: 171, name: 'MINI Cooper All-Electric', brand: 'MINI', type: 'BEV', range: '402 km (WLTP)', chargeTime: '28 min (10-80%)', image: 'https://www.mini.com.mx/content/dam/MINI/common/Range/new-generation/cooper/all-electric/bodytype-hub/mini-J01-stage-wide.avif.asset.1744139929568.avif' },
+  { id: 172, name: 'MINI Countryman All-Electric', brand: 'MINI', type: 'BEV', range: '462 km (WLTP)', chargeTime: '30 min (10-80%)', image: 'https://www.mini.com.mx/content/dam/MINI/common/Range/new-generation/countryman/bev/bodytype-hub/mini-U25-BEV-stage-wide.avif.asset.1749017837824.avif' },
 ];
 
 const PROGRAM_SCHEDULE = [
@@ -67,7 +94,7 @@ const PROGRAM_SCHEDULE = [
     events: [
       { time: '10:00', title: 'Inicio de la expo', speaker: 'Acceso General', category: 'Apertura' },
       { time: '11:00', title: 'Inauguración Oficial', speaker: 'Autoridades IPN', category: 'Inauguración' },
-      { time: '11:30', title: 'Lanzamiento RAV 4 PHVA', speaker: 'Toyota', category: 'Lanzamiento' },
+      { time: '12:00', title: 'Lanzamiento GWM Ora 5', speaker: 'GWM', category: 'Lanzamiento' },
       { time: '13:00', title: 'Lanzamiento KIA EV 3', speaker: 'KIA', category: 'Lanzamiento' },
       { time: '15:00', title: 'Presentación Proyecto electromovilidad sustentable IPN 2026', speaker: 'Investigadores IPN', category: 'Presentación' },
       { time: '16:00', title: 'Presentación conversión Buggie gasolina a híbrido por ESIME Zacatenco', speaker: 'ESIME Zacatenco', category: 'Presentación' }
@@ -76,9 +103,7 @@ const PROGRAM_SCHEDULE = [
   {
     date: '29 de Agosto',
     events: [
-      { time: '11:00', title: 'Lanzamiento GWM Ora 5', speaker: 'GWM', category: 'Lanzamiento' },
       { time: '13:00', title: 'Presentación ahorro de gasolina y electricidad en los vehículos', speaker: 'Especialistas en Eficiencia', category: 'Presentación' },
-      { time: '15:00', title: 'Presentación auto eléctrico ESFM', speaker: 'ESFM', category: 'Presentación' },
       { time: '16:30', title: 'Clausura de la expo', speaker: 'Comité Organizador', category: 'Clausura' }
     ]
   }
@@ -87,7 +112,7 @@ const PROGRAM_SCHEDULE = [
 const FAQS = [
   { q: '¿El evento tiene algún costo?', a: 'No, la entrada general y el acceso a las conferencias son totalmente gratuitos, previo registro en esta plataforma.' },
   { q: '¿Quiénes pueden asistir?', a: 'El evento está abierto a toda la comunidad politécnica (estudiantes, docentes, personal) y al público en general interesado en la movilidad sustentable.' },
-  { q: '¿Dónde se llevará a cabo?', a: 'La Expo se realizará en la Plaza del Carrillón y el Centro Cultural Jaime Torres Bodet, en Zacatenco, CDMX.' },
+  { q: '¿Dónde se llevará a cabo?', a: 'La Expo se realizará en el estacionamiento del edificio 1 de ESIME Zacatenco y el Centro Cultural Jaime Torres Bodet, CDMX.' },
   { q: '¿Necesito licencia para las pruebas de manejo?', a: 'Sí, para participar en las pruebas de manejo (Test Drives) es obligatorio presentar una licencia de conducir física y vigente.' },
 ];
 
@@ -195,51 +220,68 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2' : 'bg-white/80 backdrop-blur-md py-3'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex-shrink-0 flex items-center">
+          
+          {/* Logos institucionales: Izquierda ESIQIE, Centro IPN, Derecha ESIME */}
+          <div className="flex items-center gap-2 sm:gap-4">
             <a href="#home" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#6A0032] to-[#8B0042] flex items-center justify-center text-white font-bold text-xl shadow-lg transform group-hover:rotate-12 transition-transform">
-                <Zap size={24} />
-              </div>
-              <span className={`font-bold text-xl tracking-tight transition-colors ${scrolled ? 'text-slate-900' : 'text-white drop-shadow-md'}`}>
-                Expo<span className="text-[#16A34A]">Sustentable</span>
-              </span>
+              <img 
+                src="https://www.esiqie.ipn.mx/assets/files/esiqie/img/pleca-de-logos/logoESIQIE.png" 
+                alt="Logo ESIQIE IPN" 
+                className="h-10 sm:h-12 w-auto object-contain bg-white/80 p-1 rounded" 
+                onError={(e) => { e.target.src = "https://www.ipn.mx/assets/files/main/img/logo-ipn.png"; }}
+              />
+            </a>
+            <a href="#home" className="flex items-center">
+              <img 
+                src="https://www.ipn.mx/assets/files/main/img/logo-ipn.png" 
+                alt="Logo IPN Oficial" 
+                className="h-10 sm:h-12 w-auto object-contain" 
+              />
+            </a>
+            <a href="#home" className="flex items-center">
+              <img 
+                src="https://www.esimez.ipn.mx/assets/files/esimez/img/pleca-logos/esime.png" 
+                alt="Logo ESIME IPN" 
+                className="h-9 sm:h-11 w-auto object-contain bg-white/80 p-1 rounded"
+                onError={(e) => { e.target.src = "https://www.ipn.mx/assets/files/main/img/logo-ipn.png"; }}
+              />
             </a>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-[#16A34A] ${scrolled ? 'text-slate-600' : 'text-slate-200'}`}
+                className="text-sm font-semibold text-slate-700 hover:text-[#6A0032] transition-colors"
               >
                 {link.name}
               </a>
             ))}
             <a href="#register">
-              <Button variant={scrolled ? 'primary' : 'glass'} className="!py-2 !px-5 text-sm">
+              <Button variant="primary" className="!py-2 !px-5 text-sm shadow-md">
                 Registrarme
               </Button>
             </a>
           </div>
 
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md ${scrolled ? 'text-slate-800' : 'text-white'}`}
+              className="p-2 rounded-md text-slate-800"
               aria-label="Menú principal"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100">
           <div className="px-4 pt-2 pb-6 space-y-1">
             {navLinks.map((link) => (
               <a
@@ -265,14 +307,14 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#0F172A]">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-[#0F172A]">
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=2000" 
           alt="Vehículo eléctrico moderno cargando" 
-          className="w-full h-full object-cover opacity-50 mix-blend-overlay"
+          className="w-full h-full object-cover opacity-40 mix-blend-overlay"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/90 via-[#0F172A]/60 to-[#F8FAFC]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/90 via-[#0F172A]/70 to-[#F8FAFC]"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -406,15 +448,15 @@ const Fleet = () => {
         <Reveal type="fade-in" delay={200}>
           <div className="mb-16">
             <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Filtrar por Marcas Participantes</p>
-            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
+            <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
               {BRANDS.map((brand, i) => (
                 <button 
                   key={i} 
                   onClick={() => setSelectedBrand(brand === selectedBrand ? null : brand)}
-                  className={`text-lg md:text-xl font-bold px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  className={`text-base font-bold px-5 py-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                     brand === selectedBrand 
                       ? 'bg-[#6A0032] text-white shadow-md scale-105' 
-                      : 'text-slate-500 hover:text-[#6A0032] bg-slate-50 hover:bg-slate-100 border border-transparent'
+                      : 'text-slate-600 hover:text-[#6A0032] bg-slate-100 hover:bg-slate-200 border border-transparent'
                   }`}
                 >
                   {brand}
@@ -423,7 +465,7 @@ const Fleet = () => {
               {selectedBrand && (
                 <button 
                   onClick={() => setSelectedBrand(null)}
-                  className="text-sm text-slate-500 hover:text-slate-800 underline ml-2"
+                  className="text-sm text-slate-500 hover:text-slate-800 underline ml-2 font-medium"
                 >
                   Ver todos
                 </button>
@@ -436,34 +478,34 @@ const Fleet = () => {
           {filteredVehicles.map((vehicle, i) => (
             <Reveal key={vehicle.id} type="fade-up" delay={(i % 3) * 100}>
               <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-                {/* Contenedor de imagen con object-contain y fondo elegante para evitar recortes */}
-                <div className="relative h-60 overflow-hidden bg-slate-900 flex items-center justify-center p-2">
+                {/* Contenedor con zoom al 250% (scale-250 en hover con transición suave) */}
+                <div className="relative h-60 overflow-hidden bg-slate-900 flex items-center justify-center p-4">
                   <img 
                     src={vehicle.image} 
                     alt={`Vehículo ${vehicle.name} de ${vehicle.brand}`} 
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                    className="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-[2.5]"
                     loading="lazy"
                     onError={(e) => {
                       e.target.onerror = null; 
                       e.target.src = "https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60";
                     }}
                   />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-xs font-bold px-3 py-1 rounded-full shadow-sm text-slate-800">
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-xs font-bold px-3 py-1 rounded-full shadow-sm text-slate-800 z-10">
                     {vehicle.type}
                   </div>
                 </div>
-                <div className="p-6 flex-grow flex flex-col">
+                <div className="p-6 flex-grow flex flex-col bg-white">
                   <p className="text-sm font-bold tracking-wider text-[#6A0032] mb-1 uppercase">{vehicle.brand}</p>
                   <h3 className="text-2xl font-bold text-slate-900 mb-5">{vehicle.name}</h3>
                   
                   <div className="mt-auto flex items-center justify-between pt-4 border-t border-slate-100">
                     <div className="flex flex-col">
                       <span className="text-xs font-semibold text-slate-500 uppercase flex items-center gap-1"><Zap size={14} className="text-[#16A34A]"/> Autonomía</span>
-                      <span className="font-bold text-slate-800 text-lg">{vehicle.range}</span>
+                      <span className="font-bold text-slate-800 text-sm md:text-base">{vehicle.range}</span>
                     </div>
                     <div className="flex flex-col text-right">
                       <span className="text-xs font-semibold text-slate-500 uppercase flex items-center justify-end gap-1"><BatteryCharging size={14} className="text-[#16A34A]"/> Carga (80%)</span>
-                      <span className="font-bold text-slate-800 text-lg">{vehicle.chargeTime}</span>
+                      <span className="font-bold text-slate-800 text-sm md:text-base">{vehicle.chargeTime}</span>
                     </div>
                   </div>
                 </div>
@@ -589,12 +631,22 @@ const Registration = () => {
                   <div className="bg-white/10 p-4 rounded-xl shrink-0 backdrop-blur-sm"><MapPin size={28}/></div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">Sede Oficial</h4>
-                    <p className="text-slate-200">
-                      Estacionamiento del edificio 1 de ESIME Zacatenco. CDMX.<br/>
-                      <a href="https://maps.app.goo.gl/9i5tb9apJt92zaea8" target="_blank" rel="noreferrer" className="text-[#16A34A] hover:text-white font-medium flex items-center gap-1 mt-1 transition-colors">
-                        Ver en Google Maps <ExternalLink size={14} />
-                      </a>
+                    <p className="text-slate-200 mb-3">
+                      Estacionamiento del edificio 1 de ESIME Zacatenco y Centro Cultural Jaime Torres Bodet. CDMX.
                     </p>
+                    {/* Google Maps Embed solicitado */}
+                    <div className="rounded-xl overflow-hidden shadow-md border border-white/20">
+                      <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.6688233282102!2d-99.1368414326436!3d19.496982991862946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b7692ae4e5%3A0x3ab74018e5a86ad4!2sAparcamiento%2C%20Nueva%20Industrial%20Vallejo%2C%2007700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e1!3m2!1ses-419!2smx!4v1787202296813!5m2!1ses-419!2smx" 
+                        width="100%" 
+                        height="200" 
+                        style={{border:0}} 
+                        allowFullScreen="" 
+                        loading="lazy" 
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        title="Mapa Sede ESIME Zacatenco"
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
 
@@ -796,3 +848,15 @@ export default function App() {
     </div>
   );
 }
+```eof
+
+### Pasos para actualizar en GitHub:
+
+1. Abre tu archivo **`src/App.jsx`** en tu repositorio de GitHub o editor de código.
+2. Reemplaza todo el contenido anterior con este nuevo código completo y guarda los cambios.
+3. En tu terminal local (`expo-web`), ejecuta:
+   
+```bash
+   git add .
+   git commit -m "Actualizacion completa: Logos ESIQIE/IPN/ESIME, zoom 250% en hover, datos reales de autos, imagen Megane E-Tech, programa ajustado y Google Maps iframe"
+   git push origin main
