@@ -662,7 +662,7 @@ const Registration = () => {
 
             <div className="relative z-10 mt-16 bg-[#8B0042] rounded-2xl p-6 shadow-inner">
               <h4 className="font-bold mb-3 flex items-center gap-2"><ShieldCheck size={24} className="text-[#16A34A]"/> Acceso Seguro</h4>
-              <p className="text-sm text-slate-200 leading-relaxed">Contamos con estrictos protocolos de protección civil, servicios médicos de primer contacto y seguridad en todas las zonas de exhibición para tu tranquilidad.</p>
+              <p className="text-sm text-slate-200 leading-relaxed">Contamos con estrictos protocolos de protección civil y seguridad en todas las zonas de exhibición para tu tranquilidad.</p>
             </div>
           </div>
 
@@ -848,15 +848,3 @@ export default function App() {
     </div>
   );
 }
-```eof
-
-### Pasos para actualizar en GitHub:
-
-1. Abre tu archivo **`src/App.jsx`** en tu repositorio de GitHub o editor de código.
-2. Reemplaza todo el contenido anterior con este nuevo código completo y guarda los cambios.
-3. En tu terminal local (`expo-web`), ejecuta:
-   
-```bash
-   git add .
-   git commit -m "Actualizacion completa: Logos ESIQIE/IPN/ESIME, zoom 250% en hover, datos reales de autos, imagen Megane E-Tech, programa ajustado y Google Maps iframe"
-   git push origin main
