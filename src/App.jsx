@@ -16,13 +16,13 @@ const THEME = {
 
 const STATS = [
   { id: 1, value: '+10', label: 'Marcas Invitadas', icon: Car },
-  { id: 2, value: '+20', label: 'Vehículos Exhibidos', icon: Zap },
+  { id: 2, value: '+22', label: 'Vehículos Exhibidos', icon: Zap },
   { id: 3, value: '+1k', label: 'Asistentes Esperados', icon: Users },
   { id: 4, value: '30k', label: 'tCO₂ Evitadas al año', icon: Leaf },
 ];
 
 const BRANDS = [
-  "Renault", "BYD", "Audi", "Changan", "VW", "GWM", "Ford", "Mazda", "Hyundai", "Kia", "Toyota", "GAC", "Lexus"
+  "Renault", "BYD", "Audi", "Changan", "VW", "GWM", "Ford", "Mazda", "Hyundai", "Kia", "Toyota", "GAC", "Lexus", "MINI"
 ];
 
 const VEHICLES = [
@@ -57,6 +57,8 @@ const VEHICLES = [
   { id: 143, name: 'GS7 PHEV 2WD', brand: 'GAC', type: 'PHEV', range: 'Extendida', chargeTime: 'Híbrido Enchufable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.53.14.jpeg' },
   { id: 161, name: 'NX Hybrid 2026', brand: 'Lexus', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.44.14.jpeg' },
   { id: 162, name: 'RX Hybrid Electric 2026', brand: 'Lexus', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.45.25.jpeg' },
+  { id: 171, name: 'MINI Cooper All-Electric', brand: 'MINI', type: 'BEV', range: '402 km', chargeTime: '28 min (80%)', image: 'https://www.mini.com.mx/content/dam/MINI/common/Range/new-generation/cooper/all-electric/bodytype-hub/mini-J01-stage-wide.avif.asset.1744139929568.avif' },
+  { id: 172, name: 'MINI Countryman All-Electric', brand: 'MINI', type: 'BEV', range: '462 km', chargeTime: '30 min (80%)', image: 'https://www.mini.com.mx/content/dam/MINI/common/Range/new-generation/countryman/bev/bodytype-hub/mini-U25-BEV-stage-wide.avif.asset.1749017837824.avif' },
 ];
 
 const PROGRAM_SCHEDULE = [
@@ -434,11 +436,12 @@ const Fleet = () => {
           {filteredVehicles.map((vehicle, i) => (
             <Reveal key={vehicle.id} type="fade-up" delay={(i % 3) * 100}>
               <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-                <div className="relative h-60 overflow-hidden bg-slate-100">
+                {/* Contenedor de imagen con object-contain y fondo elegante para evitar recortes */}
+                <div className="relative h-60 overflow-hidden bg-slate-900 flex items-center justify-center p-2">
                   <img 
                     src={vehicle.image} 
                     alt={`Vehículo ${vehicle.name} de ${vehicle.brand}`} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-in-out"
                     loading="lazy"
                     onError={(e) => {
                       e.target.onerror = null; 
@@ -672,12 +675,6 @@ const Footer = () => (
           <p className="text-slate-400 text-base mb-8 leading-relaxed pr-4 max-w-md">
             Impulsando la transición tecnológica hacia un futuro más limpio y eficiente, uniendo a la academia, la industria automotriz y la sociedad.
           </p>
-          <div className="flex space-x-3">
-            <span className="text-xs font-bold text-slate-300 bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700">Facebook</span>
-            <span className="text-xs font-bold text-slate-300 bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700">Twitter</span>
-            <span className="text-xs font-bold text-slate-300 bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700">Instagram</span>
-            <span className="text-xs font-bold text-slate-300 bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700">LinkedIn</span>
-          </div>
         </div>
 
         <div className="col-span-1 lg:col-span-3 lg:ml-auto">
