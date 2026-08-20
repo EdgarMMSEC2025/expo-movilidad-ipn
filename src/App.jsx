@@ -3,12 +3,12 @@ import {
   Menu, X, ChevronDown, ChevronUp, Zap, BatteryCharging, 
   Car, Calendar, MapPin, Mail, Phone, CheckCircle, 
   ArrowRight, Leaf, ShieldCheck, Users, TrendingUp,
-  Facebook, Twitter, Instagram, Linkedin, ExternalLink
+  ExternalLink
 } from 'lucide-react';
 
 const THEME = {
-  primary: '#6A0032', // IPN Guinda
-  secondary: '#16A34A', // Verde Sustentable
+  primary: '#6A0032',
+  secondary: '#16A34A',
   dark: '#0F172A',
   bg: '#F8FAFC',
   text: '#1E293B'
@@ -672,11 +672,11 @@ const Footer = () => (
           <p className="text-slate-400 text-base mb-8 leading-relaxed pr-4 max-w-md">
             Impulsando la transición tecnológica hacia un futuro más limpio y eficiente, uniendo a la academia, la industria automotriz y la sociedad.
           </p>
-          <div className="flex space-x-5">
-            <a href="#" className="text-slate-400 hover:text-white transition-colors bg-slate-800 p-2.5 rounded-full hover:bg-[#6A0032]"><Facebook size={20} /></a>
-            <a href="#" className="text-slate-400 hover:text-white transition-colors bg-slate-800 p-2.5 rounded-full hover:bg-[#6A0032]"><Twitter size={20} /></a>
-            <a href="#" className="text-slate-400 hover:text-white transition-colors bg-slate-800 p-2.5 rounded-full hover:bg-[#6A0032]"><Instagram size={20} /></a>
-            <a href="#" className="text-slate-400 hover:text-white transition-colors bg-slate-800 p-2.5 rounded-full hover:bg-[#6A0032]"><Linkedin size={20} /></a>
+          <div className="flex space-x-3">
+            <span className="text-xs font-bold text-slate-300 bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700">Facebook</span>
+            <span className="text-xs font-bold text-slate-300 bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700">Twitter</span>
+            <span className="text-xs font-bold text-slate-300 bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700">Instagram</span>
+            <span className="text-xs font-bold text-slate-300 bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700">LinkedIn</span>
           </div>
         </div>
 
