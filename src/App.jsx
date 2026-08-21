@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Menu, X, ChevronDown, ChevronUp, Zap, BatteryCharging, 
   Car, Calendar, MapPin, Mail, Phone, CheckCircle, 
-  ArrowRight, Leaf, ShieldCheck, Users, TrendingUp,
-  ExternalLink
+  ArrowRight, Leaf, ShieldCheck, Users, Clock,
+  ExternalLink,
+  Timer
 } from 'lucide-react';
 
 const THEME = {
@@ -25,7 +26,6 @@ const BRANDS = [
   "Renault", "BYD", "Audi", "Changan", "VW", "GWM", "Ford", "Mazda", "Hyundai", "Kia", "Toyota", "GAC", "Lexus", "MINI"
 ];
 
-// Catálogo actualizado con especificaciones reales y verificadas
 const VEHICLES = [
   // Renault
   { id: 1, name: 'Megane E-Tech 100% Eléctrico', brand: 'Renault', type: 'BEV', range: '450 km (WLTP)', chargeTime: '30 min (15-80%)', image: 'https://cdn.group.renault.com/ren/mx/mex/vehiculos-electricos/megane-e-tech/Megane%20E-Tech_Exterior_01.jpg.ximg.large.webp/d4cbc2fadf.webp' },
@@ -52,10 +52,11 @@ const VEHICLES = [
   { id: 61, name: 'GWM Ora 03 (Ora 5)', brand: 'GWM', type: 'BEV', range: '500 km (NEDC)', chargeTime: '40 min (30-80%)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.46.58.jpeg' },
   { id: 62, name: 'Haval H6 HEV', brand: 'GWM', type: 'HEV', range: '19.2 km/l combinado', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.49.17.jpeg' },
   
-  // Ford
-  { id: 71, name: 'Territory EcoBoost', brand: 'Ford', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.39.09.jpeg' },
-  { id: 72, name: 'Escape Híbrida', brand: 'Ford', type: 'HEV', range: '20+ km/l', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.39.52.jpeg' },
-  { id: 73, name: 'Maverick Híbrida', brand: 'Ford', type: 'HEV', range: '23 km/l en ciudad', chargeTime: 'Autorrecargable', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 20.40.24.jpeg' },
+  // Ford (ACTUALIZADOS)
+  { id: 71, name: 'Territory Híbrida 2027', brand: 'Ford', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: 'https://www.ford.mx/content/ford/mx/es_mx/home/suv/territory-hibrida/2027/jcr:content/par/imagegalleryfullscre/image0/image.imgs.full.high.jpg/1781720148518.jpg' },
+  { id: 72, name: 'Edge Híbrida 2026', brand: 'Ford', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: 'https://www.ford.mx/content/ford/mx/es_mx/home/suv/edge/2026/jcr:content/par/imagegalleryfullscre/image0/image.imgs.full.high.jpg/1762295795329.jpg' },
+  { id: 73, name: 'Maverick Híbrida 2026', brand: 'Ford', type: 'HEV', range: 'Alta Eficiencia', chargeTime: 'Autorrecargable', image: 'https://www.ford.mx/content/dam/Ford/website-assets/latam/mx/nameplate/maverick-hev/2026/overview/features/expanded-feature/desk/ford-maverick-hibrida-2026-pickup-motor-capacidad-autonomia-eficiencia.jpg' },
+  { id: 74, name: 'Mustang Mach-E', brand: 'Ford', type: 'BEV', range: '402 km', chargeTime: '45 min (80%)', image: 'https://www.fordmylsa.mx/Assets/ModelosNuevos/Img/Modelos/MUSTANG-MACH-E/26/galeriared/big/mustang-mach-e-galeria-01.jpg' },
   
   // Mazda
   { id: 81, name: 'CX-90 PHEV', brand: 'Mazda', type: 'PHEV', range: '42 km modo 100% EV', chargeTime: '2.5 hrs (Nivel 2)', image: '/FOTOS_AUTOS/WhatsApp Image 2026-08-18 at 21.17.01.jpeg' },
@@ -96,19 +97,21 @@ const PROGRAM_SCHEDULE = [
       { time: '11:00', title: 'Inauguración Oficial', speaker: 'Autoridades IPN', category: 'Inauguración' },
       { time: '11:30', title: 'Lanzamiento KIA EV 3', speaker: 'KIA', category: 'Lanzamiento' },
       { time: '12:00', title: 'Lanzamiento GWM Ora 5', speaker: 'GWM', category: 'Lanzamiento' },
-      { time: '15:00', title: 'Presentación Proyecto electromovilidad sustentable IPN 2026', speaker: 'Investigadores IPN', category: 'Presentación' }
+      { time: '13:00', title: 'Presentación Sentra 2002 convertido a 100% eléctrico', speaker: 'Ing. César Gustavo Gómez Sierra', category: 'Presentación' },
+      { time: '15:00', title: 'Presentación Proyecto electromovilidad sustentable IPN 2026', speaker: 'M. en A. Edgar Maldonado Mosqueda', category: 'Presentación' }
     ]
   },
   {
     date: '29 de Agosto',
     events: [
-      { time: '13:00', title: 'Presentación ahorro de gasolina y electricidad en los vehículos', speaker: 'Especialistas en Eficiencia', category: 'Presentación' },
+      { time: '13:00', title: 'Presentación ahorro de gasolina y electricidad en los vehículos', speaker: 'M. en A. Edgar Maldonado Mosqueda', category: 'Presentación' },
       { time: '16:30', title: 'Clausura de la expo', speaker: 'Comité Organizador', category: 'Clausura' }
     ]
   }
 ];
 
 const FAQS = [
+  { q: '¿Cómo llegar al evento?', a: 'Deberás ingresar por la puerta ubicada en Av. Wilfrido Massieu y Manuel de Anda y Barredo. También puedes llegar por el Trolebús que sale del Metro Politécnico.' },
   { q: '¿El evento tiene algún costo?', a: 'No, la entrada general y el acceso a las conferencias son totalmente gratuitos, previo registro en esta plataforma.' },
   { q: '¿Quiénes pueden asistir?', a: 'El evento está abierto a toda la comunidad politécnica (estudiantes, docentes, personal) y al público en general interesado en la movilidad sustentable.' },
   { q: '¿Dónde se llevará a cabo?', a: 'La Expo se realizará en el estacionamiento del edificio 1 de ESIME Zacatenco y el Centro Cultural Jaime Torres Bodet, CDMX.' },
@@ -223,9 +226,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           
-          {/* ESIQIE a la izquierda, IPN al centro, ESIME a la derecha */}
           <div className="flex items-center justify-between w-full lg:w-auto gap-4">
-            {/* ESIQIE - Izquierda */}
             <a href="#home" className="flex items-center">
               <img 
                 src="https://esiqie.ipn.mx/assets/files/esiqie/assets/img/escudo.png" 
@@ -233,8 +234,6 @@ const Navbar = () => {
                 className="h-10 sm:h-12 w-auto object-contain bg-white/90 p-1 rounded shadow-sm" 
               />
             </a>
-            
-            {/* IPN - Centro */}
             <a href="#home" className="flex items-center">
               <img 
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSriEvtiSVZmxMMk5_280rt8BNcuwz4YSgz9yB37M0C9w&s=10" 
@@ -242,8 +241,6 @@ const Navbar = () => {
                 className="h-10 sm:h-12 w-auto object-contain" 
               />
             </a>
-
-            {/* ESIME - Derecha */}
             <a href="#home" className="flex items-center">
               <img 
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmwAMAZKhKfHdVn0e7BpPFEyXWg_nuO5fNTe7XL8ctY1ZSgY-nWGX22UVS&s=10" 
@@ -307,6 +304,49 @@ const Navbar = () => {
   );
 };
 
+const CountdownTimer = () => {
+  const calculateTimeLeft = () => {
+    // Fecha objetivo: 28 de agosto de 2026, 10:00 AM
+    const difference = +new Date("2026-08-28T10:00:00") - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        Días: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        Horas: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        Minutos: Math.floor((difference / 1000 / 60) % 60),
+        Segundos: Math.floor((difference / 1000) % 60),
+      };
+    }
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    return () => clearTimeout(timer);
+  });
+
+  const timerComponents = [];
+  Object.keys(timeLeft).forEach((interval) => {
+    timerComponents.push(
+      <div key={interval} className="flex flex-col items-center p-3 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 min-w-[80px]">
+        <span className="text-3xl font-extrabold text-white">{timeLeft[interval]}</span>
+        <span className="text-xs uppercase tracking-wider text-slate-300 mt-1">{interval}</span>
+      </div>
+    );
+  });
+
+  return (
+    <div className="flex gap-4 justify-center mt-8 mb-10">
+      {timerComponents.length ? timerComponents : <span className="text-2xl font-bold text-[#16A34A]">¡El evento ha comenzado!</span>}
+    </div>
+  );
+};
+
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-[#0F172A]">
@@ -321,14 +361,14 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <Reveal type="fade-up" delay={100}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium mb-8 shadow-xl">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium mb-6 shadow-xl">
             <span className="w-2.5 h-2.5 rounded-full bg-[#16A34A] animate-pulse"></span>
-            Zacatenco, IPN • Agosto 2026
+            Zacatenco, IPN • 28 de Agosto 2026
           </div>
         </Reveal>
         
         <Reveal type="fade-up" delay={300}>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tight mb-4 leading-tight">
             Expo Movilidad <br className="hidden md:block"/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-emerald-300">
               Sustentable IPN
@@ -336,8 +376,12 @@ const Hero = () => {
           </h1>
         </Reveal>
 
+        <Reveal type="fade-up" delay={400}>
+          <CountdownTimer />
+        </Reveal>
+
         <Reveal type="fade-up" delay={500}>
-          <p className="mt-4 text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+          <p className="mt-2 text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
             Descubre el futuro de la movilidad eléctrica, híbrida y sustentable en el Instituto Politécnico Nacional.
           </p>
         </Reveal>
@@ -365,6 +409,27 @@ const About = () => {
   return (
     <section id="about" className="py-24 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Banner Pruebas de Manejo */}
+        <Reveal type="fade-up">
+          <div className="mb-16 bg-gradient-to-r from-[#6A0032] to-[#8B0042] rounded-2xl p-8 md:p-10 text-white shadow-2xl flex flex-col md:flex-row items-center justify-between border border-[#6A0032]/20">
+            <div className="flex items-center gap-6 mb-6 md:mb-0">
+              <div className="bg-white/20 p-4 rounded-full">
+                <Car size={40} className="text-[#16A34A]"/>
+              </div>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-extrabold mb-2">¡Pruebas de Manejo Disponibles!</h3>
+                <p className="text-slate-200 text-lg">Vive la experiencia de conducir un vehículo electrificado (Test Drives). Recuerda traer tu licencia de conducir vigente física.</p>
+              </div>
+            </div>
+            <a href="#register">
+              <Button variant="secondary" className="whitespace-nowrap px-8 py-4 shadow-[0_0_20px_rgba(22,163,74,0.4)]">
+                Agendar Test Drive
+              </Button>
+            </a>
+          </div>
+        </Reveal>
+
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <Reveal type="fade-right">
             <div className="relative">
@@ -569,7 +634,7 @@ const Program = () => {
                             <h4 className="text-xl font-bold text-white mb-2 leading-tight">{item.title}</h4>
                             <p className="text-slate-400 text-sm flex items-center gap-2">
                               <Users size={16} className="text-slate-500 shrink-0"/> 
-                              <span className="truncate">{item.speaker}</span>
+                              <span className="truncate" title={item.speaker}>{item.speaker}</span>
                             </p>
                           </div>
                         </div>
