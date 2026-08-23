@@ -112,7 +112,7 @@ const PROGRAM_SCHEDULE = [
 
 const FAQS = [
   { q: '¿Cómo llegar al evento?', a: 'Deberás ingresar por la puerta ubicada en Av. Wilfrido Massieu y Manuel de Anda y Barredo. También puedes llegar por el Trolebús que sale del Metro Politécnico.' },
-  { q: '¿El evento tiene algún costo?', a: 'No, la entrada general y el acceso a las conferencias son totalmente gratuitos, previo registro en esta plataforma.' },
+  { q: '¿El evento tiene algún costo?', a: 'No, la entrada general y el acceso a las conferencias son totalmente gratuitos, previo registro en esta plataforma. Es IMPORTANTE que lleves o muestres tu pase que te llegará por correo' },
   { q: '¿Quiénes pueden asistir?', a: 'El evento está abierto a toda la comunidad politécnica (estudiantes, docentes, personal) y al público en general interesado en la movilidad sustentable.' },
   { q: '¿Dónde se llevará a cabo?', a: 'La Expo se realizará en el estacionamiento del edificio 1 de ESIME Zacatenco y el Centro Cultural Jaime Torres Bodet, CDMX.' },
   { q: '¿Necesito licencia para las pruebas de manejo?', a: 'Sí, para participar en las pruebas de manejo (Test Drives) es obligatorio presentar una licencia de conducir física y vigente.' },
@@ -262,7 +262,7 @@ const Navbar = () => {
             ))}
             <a href="#register">
               <Button variant="primary" className="!py-2 !px-5 text-sm shadow-md">
-                Registrarme
+                Obtener mi pase
               </Button>
             </a>
           </div>
