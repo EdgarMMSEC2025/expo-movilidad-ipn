@@ -661,7 +661,7 @@ const Registration = () => {
           
           <div className="w-full lg:w-3/5 p-4 md:p-8 relative min-h-[600px] flex flex-col">
             <Reveal type="fade-right" className="w-full h-full flex-grow flex flex-col">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 px-4 pt-4">Asegura tu lugar</h2>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 px-4 pt-4">Obten tu pase y Asegura tu lugar</h2>
               <div className="flex-grow w-full rounded-xl overflow-hidden">
                 <iframe 
                   width="100%" 
