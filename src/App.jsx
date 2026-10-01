@@ -227,34 +227,29 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           
-          // Reemplaza la parte de los logos dentro de Navbar
-<div className="flex items-center justify-between w-full lg:w-auto gap-8">
-  {/* Logo IPN (Izquierda) sin fondo blanco usando mix-blend-multiply */}
-  <a href="#home" className="flex items-center">
-    <img 
-      src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Logo_Instituto_Politécnico_Nacional.png" 
-      alt="Logo IPN" 
-      className="h-12 sm:h-16 w-auto object-contain mix-blend-multiply" 
-    />
-  </a>
-  {/* Logo NUEVO (Centro) */}
-  <a href="#home" className="flex items-center">
-    {/* AQUÍ PONDRÁS LA RUTA DE LA IMAGEN QUE TE DARÁ TU PROFESOR */}
-    <img 
-      src="/ruta-al-nuevo-logo.png" 
-      alt="Nuevo Logo Proyecto" 
-      className="h-12 sm:h-16 w-auto object-contain mix-blend-multiply" 
-    />
-  </a>
-  {/* Logo ESIQIE (Derecha) sin fondo blanco */}
-  <a href="#home" className="flex items-center">
-    <img 
-      src="https://esiqie.ipn.mx/assets/files/esiqie/assets/img/escudo.png" 
-      alt="Escudo ESIQIE" 
-      className="h-12 sm:h-16 w-auto object-contain mix-blend-multiply" 
-    />
-  </a>
-</div>
+          <div className="flex items-center justify-between w-full lg:w-auto gap-4">
+            <a href="#home" className="flex items-center">
+              <img 
+                src="https://esiqie.ipn.mx/assets/files/esiqie/assets/img/escudo.png" 
+                alt="Escudo ESIQIE IPN" 
+                className="h-10 sm:h-12 w-auto object-contain bg-white/90 p-1 rounded shadow-sm" 
+              />
+            </a>
+            <a href="#home" className="flex items-center">
+              <img 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSriEvtiSVZmxMMk5_280rt8BNcuwz4YSgz9yB37M0C9w&s=10" 
+                alt="Logo IPN" 
+                className="h-10 sm:h-12 w-auto object-contain" 
+              />
+            </a>
+            <a href="#home" className="flex items-center">
+              <img 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmwAMAZKhKfHdVn0e7BpPFEyXWg_nuO5fNTe7XL8ctY1ZSgY-nWGX22UVS&s=10" 
+                alt="Logo ESIME" 
+                className="h-10 sm:h-12 w-auto object-contain bg-white/90 p-1 rounded shadow-sm"
+              />
+            </a>
+          </div>
 
           <div className="hidden lg:flex items-center space-x-8 ml-8">
             {navLinks.map((link) => (
