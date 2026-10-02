@@ -523,9 +523,9 @@ const Fleet = () => {
                 {type.label}
               </button>
               ))}
-              {selectedBrand && (
+              {selectedType && (
                 <button 
-                  onClick={() => setSelectedBrand(null)}
+                  onClick={() => setSelectedType(null)}
                   className="text-sm text-slate-500 hover:text-slate-800 underline ml-2 font-medium"
                 >
                   Ver todos
