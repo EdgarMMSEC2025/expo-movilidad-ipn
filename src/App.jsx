@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Donations from './Donations';
+import Sponsors from './Sponsors';
 import { 
   Menu, X, ChevronDown, ChevronUp, Zap, BatteryCharging, 
   Car, Calendar, MapPin, Mail, Phone, CheckCircle, 
@@ -889,7 +889,7 @@ export default function App() {
         <Program />
         <Registration />
         <FAQs />
-        <Donations/>
+        <Sponsors/>
       </main>
       <Footer />
     </div>
