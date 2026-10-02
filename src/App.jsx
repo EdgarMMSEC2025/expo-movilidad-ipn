@@ -231,7 +231,7 @@ const Navbar = () => {
   
   <a href="#home" className="flex items-center">
     <img 
-      src="/FOTOS_AUTOS/Escudo_ipn.png" 
+      src="/FOTOS_AUTOS/Escudo_ipn2.png" 
       alt="Logo IPN" 
       className="h-12 sm:h-16 w-auto object-contain mix-blend-multiply" 
     />
@@ -248,7 +248,7 @@ const Navbar = () => {
   
   <a href="#home" className="flex items-center">
     <img 
-      src="https://esiqie.ipn.mx/assets/files/esiqie/assets/img/escudo.png" 
+      src="/FOTOS_AUTOS/Escudo_esiqie.png" 
       alt="Escudo ESIQIE" 
       className="h-12 sm:h-16 w-auto object-contain mix-blend-multiply" 
     />
@@ -371,7 +371,7 @@ const Hero = () => {
         <Reveal type="fade-up" delay={300}>
   
              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
-               Proyecto ejecutivo de colaboración para la <br className="hidden md:block"/>
+               Proyecto <br className="hidden md:block"/>
              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-emerald-300">     {/* Aqui modifque titulo */} 
              movibilidad sustentable IPN        
              </span>
