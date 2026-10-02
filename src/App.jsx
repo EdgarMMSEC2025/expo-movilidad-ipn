@@ -265,7 +265,7 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-                     //aqui iba lo del boten de obtener pase
+                     
           </div>
 
           <div className="lg:hidden flex items-center ml-4">
@@ -307,7 +307,7 @@ const Navbar = () => {
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
-    // Fecha objetivo: 28 de agosto de 2026, 10:00 AM
+              {/* Fecha objetivo: 28 de agosto de 2026, 10:00 AM */}
     const difference = +new Date("2026-08-28T10:00:00") - +new Date();
     let timeLeft = {};
 
@@ -372,8 +372,8 @@ const Hero = () => {
   
              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
                Proyecto ejecutivo de colaboración para la <br className="hidden md:block"/>
-             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-emerald-300">     // Aqui moldifique titulo de proyecto
-             movibilidad sustentable IPN
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-emerald-300">     {/* Aqui modifque titulo */} 
+             movibilidad sustentable IPN        
              </span>
              </h1>
          </Reveal>
@@ -393,7 +393,7 @@ const Hero = () => {
           <a href="#inversores">
       <Button variant="secondary" className="w-full sm:w-auto text-lg px-8 py-4">
         Convertirse en Patrocinador <ArrowRight className="ml-2" size={20} />
-      </Button>     // Aqui modifique botones para Patrocinador
+      </Button>     {/* Aqui modifique lo de patrocinador */}
        </a>
         <a href="#program">
         <Button variant="glass" className="w-full sm:w-auto text-lg px-8 py-4">
@@ -481,7 +481,7 @@ const About = () => {
 };
 
 const Fleet = () => {
-  const [selectedType, setSelectedType] = useState(null);    // Cambismo el selectedBrand
+  const [selectedType, setSelectedType] = useState(null);      {/* Cambismo el selectedBrand */}
 
   const TYPES = [
     { id: 'BEV', label: '100% Eléctricos (BEV)' },
@@ -489,7 +489,7 @@ const Fleet = () => {
     { id: 'PHEV', label: 'Híbridos Enchufables (PHEV)' },
     { id: 'MHEV', label: 'Mild-Hybrid (MHEV)' },
     { id: 'REEV', label: 'Rango Extendido (REEV)' }
-  ];          //mapeamos tipos de vihiculos
+  ];          {/* Mapeamos vehiculos */}
   
   
   const filteredVehicles = selectedType 
@@ -498,7 +498,7 @@ const Fleet = () => {
 
   return (
     <section id="vehicles" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">     // Revisar este
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">     {/* Revisar este */}
         <SectionHeading 
           title="El Ecosistema Eléctrico" 
           subtitle="Conoce de cerca los vehículos que están redefiniendo la forma en que nos movemos. Desde compactos urbanos hasta SUVs de alto rendimiento."
@@ -530,7 +530,7 @@ const Fleet = () => {
                 >
                   Ver todos
                 </button>
-              )}              // Hasta aqui llega lo de los tipos de vihiculos
+              )}              {/* Hasta aqui llega lo de tipos de vehiculos */}
             </div>
           </div>
         </Reveal>
