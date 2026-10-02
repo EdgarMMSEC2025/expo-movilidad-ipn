@@ -649,83 +649,70 @@ const Program = () => {
 
 const Registration = () => {
   return (
-    <section id="register" className="py-24 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
-          
-          <div className="w-full lg:w-3/5 p-4 md:p-8 relative min-h-[600px] flex flex-col">
-            <Reveal type="fade-right" className="w-full h-full flex-grow flex flex-col">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 px-4 pt-4">Obten tu pase y Asegura tu lugar</h2>
-              <div className="flex-grow w-full rounded-xl overflow-hidden">
-                <iframe 
-                  width="100%" 
-                  height="100%" 
-                  src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=2fRL-ZeAlEet9qVGbKKFY5_1DTWk4O5HlOXCR7ztX2VUNzJBS09PWEtTR1A1WFJHMURDVDFVQlVCNi4u&embed=true" 
-                  frameBorder="0" 
-                  marginWidth="0" 
-                  marginHeight="0" 
-                  style={{border: "none", minHeight: "550px", maxHeight: "100vh"}} 
-                  allowFullScreen 
-                  title="Formulario de Registro"
-                ></iframe>
-              </div>
-            </Reveal>
-          </div>
-
-          <div className="w-full lg:w-2/5 bg-[#6A0032] text-white p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+    <section id="detalles" className="py-24 bg-[#F8FAFC]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal type="fade-up">
+          <div className="bg-[#6A0032] text-white rounded-[2rem] shadow-2xl p-8 md:p-12 relative overflow-hidden">
+            {/* Fondo de puntitos */}
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
             
             <div className="relative z-10">
-              <h3 className="text-3xl font-bold mb-10">Detalles del Evento</h3>
+              <h3 className="text-3xl font-bold mb-10 text-center">Detalles del Evento</h3>
               
-              <div className="space-y-8">
-                <div className="flex items-start gap-5">
-                  <div className="bg-white/10 p-4 rounded-xl shrink-0 backdrop-blur-sm"><Calendar size={28}/></div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-1">Fecha y Hora</h4>
-                    <p className="text-slate-200">28 y 29 de agosto, 2026<br/>10:00 hrs a 17:00 hrs</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-5">
-                  <div className="bg-white/10 p-4 rounded-xl shrink-0 backdrop-blur-sm"><MapPin size={28}/></div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-1">Sede Oficial</h4>
-                    <p className="text-slate-200 mb-3">
-                      Estacionamiento del edificio 1 de ESIME Zacatenco y Centro Cultural Jaime Torres Bodet. CDMX.
-                    </p>
-                    <div className="rounded-xl overflow-hidden shadow-md border border-white/20">
-                      <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.6688233282102!2d-99.1368414326436!3d19.496982991862946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b7692ae4e5%3A0x3ab74018e5a86ad4!2sAparcamiento%2C%20Nueva%20Industrial%20Vallejo%2C%2007700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e1!3m2!1ses-419!2smx!4v1787202296813!5m2!1ses-419!2smx" 
-                        width="100%" 
-                        height="200" 
-                        style={{border:0}} 
-                        allowFullScreen="" 
-                        loading="lazy" 
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        title="Mapa Sede ESIME Zacatenco"
-                      ></iframe>
+              <div className="grid md:grid-cols-2 gap-10">
+                {/* Columna Izquierda: Info y Contacto */}
+                <div className="space-y-8">
+                  <div className="flex items-start gap-5">
+                    <div className="bg-white/10 p-4 rounded-xl shrink-0 backdrop-blur-sm"><Calendar size={28}/></div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-1">Fecha y Hora</h4>
+                      <p className="text-slate-200">28 y 29 de agosto, 2026<br/>10:00 hrs a 17:00 hrs</p>
                     </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-5">
+                    <div className="bg-white/10 p-4 rounded-xl shrink-0 backdrop-blur-sm"><Mail size={28}/></div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-1">Contacto Organizador</h4>
+                      <p className="text-slate-200">emaldonadom@ipn.mx<br/>WhatsApp: 55 3287 3697</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 bg-[#8B0042] rounded-2xl p-6 shadow-inner">
+                    <h4 className="font-bold mb-3 flex items-center gap-2"><ShieldCheck size={24} className="text-[#16A34A]"/> Acceso Seguro</h4>
+                    <p className="text-sm text-slate-200 leading-relaxed">Contamos con estrictos protocolos de protección civil, servicios médicos de primer contacto y seguridad en todas las zonas de exhibición.</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-5">
-                  <div className="bg-white/10 p-4 rounded-xl shrink-0 backdrop-blur-sm"><Mail size={28}/></div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-1">Contacto Organizador</h4>
-                    <p className="text-slate-200">emaldonadom@ipn.mx<br/>WhatsApp: 55 3287 3697</p>
+                {/* Columna Derecha: Mapa */}
+                <div className="flex flex-col">
+                  <div className="flex items-start gap-5 mb-4">
+                    <div className="bg-white/10 p-4 rounded-xl shrink-0 backdrop-blur-sm"><MapPin size={28}/></div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-1">Sede Oficial</h4>
+                      <p className="text-slate-200 text-sm">
+                        Estacionamiento del edificio 1 de ESIME Zacatenco y Centro Cultural Jaime Torres Bodet. CDMX.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="rounded-xl overflow-hidden shadow-md border border-white/20 flex-grow min-h-[200px]">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.6688233282102!2d-99.1368414326436!3d19.496982991862946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b7692ae4e5%3A0x3ab74018e5a86ad4!2sAparcamiento%2C%20Nueva%20Industrial%20Vallejo%2C%2007700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e1!3m2!1ses-419!2smx!4v1787202296813!5m2!1ses-419!2smx" 
+                      width="100%" 
+                      height="100%" 
+                      style={{border:0}} 
+                      allowFullScreen="" 
+                      loading="lazy" 
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      title="Mapa Sede ESIME Zacatenco"
+                    ></iframe>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="relative z-10 mt-16 bg-[#8B0042] rounded-2xl p-6 shadow-inner">
-              <h4 className="font-bold mb-3 flex items-center gap-2"><ShieldCheck size={24} className="text-[#16A34A]"/> Acceso Seguro</h4>
-              <p className="text-sm text-slate-200 leading-relaxed">Contamos con estrictos protocolos de protección civil, servicios médicos de primer contacto y seguridad en todas las zonas de exhibición para tu tranquilidad.</p>
+              
             </div>
           </div>
-
-        </div>
+        </Reveal>
       </div>
     </section>
   );
