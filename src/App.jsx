@@ -265,11 +265,7 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <a href="#register">
-              <Button variant="primary" className="!py-2 !px-5 text-sm shadow-md">
-                Obtener mi pase
-              </Button>
-            </a>
+                     //aqui iba lo del boten de obtener pase
           </div>
 
           <div className="lg:hidden flex items-center ml-4">
@@ -373,13 +369,14 @@ const Hero = () => {
         </Reveal>
         
         <Reveal type="fade-up" delay={300}>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tight mb-4 leading-tight">
-            Expo Movilidad <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-emerald-300">
-              Sustentable IPN
-            </span>
-          </h1>
-        </Reveal>
+  
+             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+               Proyecto ejecutivo de colaboración para la <br className="hidden md:block"/>
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-emerald-300">
+             movibilidad sustentable IPN
+             </span>
+             </h1>
+         </Reveal>
 
         <Reveal type="fade-up" delay={400}>
           <CountdownTimer />
@@ -392,19 +389,19 @@ const Hero = () => {
         </Reveal>
 
         <Reveal type="fade-in" delay={700}>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#register">
-              <Button variant="secondary" className="w-full sm:w-auto text-lg px-8 py-4">
-                Registrarme Gratis <ArrowRight className="ml-2" size={20} />
-              </Button>
-            </a>
-            <a href="#program">
-              <Button variant="glass" className="w-full sm:w-auto text-lg px-8 py-4">
-                Conocer Programa
-              </Button>
-            </a>
-          </div>
-        </Reveal>
+           <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#inversores">
+      <Button variant="secondary" className="w-full sm:w-auto text-lg px-8 py-4">
+        Convertirse en Patrocinador <ArrowRight className="ml-2" size={20} />
+      </Button>
+       </a>
+        <a href="#program">
+        <Button variant="glass" className="w-full sm:w-auto text-lg px-8 py-4">
+        Conocer el Proyecto
+        </Button>
+       </a>
+      </div>
+      </Reveal>
       </div>
     </section>
   );
