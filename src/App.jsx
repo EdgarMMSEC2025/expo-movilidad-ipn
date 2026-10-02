@@ -227,33 +227,55 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           
-  <div className="flex items-center justify-between w-full relative">
-  
-  <a href="#home" className="flex-shrink-0 z-10">
-    <img 
-      src="/FOTOS_AUTOS/Escudo_ipn2.png" 
-      alt="Logo IPN" 
-      className="h-12 sm:h-16 w-auto object-contain mix-blend-multiply" 
+  <div className="flex items-center justify-between w-full lg:w-auto gap-8">
+
+  <a href="#home" className="flex items-center">
+
+    <img
+
+      src="/FOTOS_AUTOS/Escudo_ipn2.png"
+
+      alt="Logo IPN"
+
+      className="h-12 sm:h-16 w-auto object-contain mix-blend-multiply"
+
     />
+
   </a>
-  
-  <a href="#home" className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-    
-    <img 
-      src="/FOTOS_AUTOS/imgagenexp.png" 
-      alt="Nuevo Logo Proyecto" 
-      className="h-16 sm:h-20 w-auto object-contain mix-blend-multiply drop-shadow-sm" 
+
+  <a href="#home" className="flex items-center">
+
+    <img
+
+      src="/FOTOS_AUTOS/imgagenexp.png"
+
+      alt="Nuevo Logo Proyecto"
+
+      className="h-12 sm:h-16 w-auto object-contain mix-blend-multiply"
+
     />
+
   </a>
-  
-  <a href="#home" className="flex-shrink-0 z-10">
-    <img 
-      src="/FOTOS_AUTOS/Escudo_esiqie.png" 
-      alt="Escudo ESIQIE" 
-      className="h-12 sm:h-16 w-auto object-contain mix-blend-multiply" 
+
+ 
+
+  <a href="#home" className="flex items-center">
+
+    <img
+
+      src="/FOTOS_AUTOS/Escudo_esiqie.png"
+
+      alt="Escudo ESIQIE"
+
+      className="h-12 sm:h-16 w-auto object-contain mix-blend-multiply"
+
     />
+
   </a>
-</div>
+
+</div> 
+
+
 
           <div className="hidden lg:flex items-center space-x-8 ml-8">
             {navLinks.map((link) => (
