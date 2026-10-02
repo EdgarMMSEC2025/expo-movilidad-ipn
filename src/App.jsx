@@ -372,7 +372,7 @@ const Hero = () => {
   
              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
                Proyecto ejecutivo de colaboración para la <br className="hidden md:block"/>
-             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-emerald-300">
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-emerald-300">     // Aqui moldifique titulo de proyecto
              movibilidad sustentable IPN
              </span>
              </h1>
@@ -393,7 +393,7 @@ const Hero = () => {
           <a href="#inversores">
       <Button variant="secondary" className="w-full sm:w-auto text-lg px-8 py-4">
         Convertirse en Patrocinador <ArrowRight className="ml-2" size={20} />
-      </Button>
+      </Button>     // Aqui modifique botones para Patrocinador
        </a>
         <a href="#program">
         <Button variant="glass" className="w-full sm:w-auto text-lg px-8 py-4">
@@ -412,25 +412,6 @@ const About = () => {
     <section id="about" className="py-24 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Banner Pruebas de Manejo */}
-        <Reveal type="fade-up">
-          <div className="mb-16 bg-gradient-to-r from-[#6A0032] to-[#8B0042] rounded-2xl p-8 md:p-10 text-white shadow-2xl flex flex-col md:flex-row items-center justify-between border border-[#6A0032]/20">
-            <div className="flex items-center gap-6 mb-6 md:mb-0">
-              <div className="bg-white/20 p-4 rounded-full">
-                <Car size={40} className="text-[#16A34A]"/>
-              </div>
-              <div>
-                <h3 className="text-2xl md:text-3xl font-extrabold mb-2">¡Pruebas de Manejo Disponibles!</h3>
-                <p className="text-slate-200 text-lg">Vive la experiencia de conducir un vehículo electrificado (Test Drives). Recuerda traer tu licencia de conducir vigente física.</p>
-              </div>
-            </div>
-            <a href="#register">
-              <Button variant="secondary" className="whitespace-nowrap px-8 py-4 shadow-[0_0_20px_rgba(22,163,74,0.4)]">
-                Agendar Test Drive
-              </Button>
-            </a>
-          </div>
-        </Reveal>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <Reveal type="fade-right">
@@ -500,36 +481,47 @@ const About = () => {
 };
 
 const Fleet = () => {
-  const [selectedBrand, setSelectedBrand] = useState(null);
+  const [selectedType, setSelectedType] = useState(null);    // Cambismo el selectedBrand
 
-  const filteredVehicles = selectedBrand 
-    ? VEHICLES.filter(v => v.brand === selectedBrand)
+  const TYPES = [
+    { id: 'BEV', label: '100% Eléctricos (BEV)' },
+    { id: 'HEV', label: 'Híbridos (HEV)' },
+    { id: 'PHEV', label: 'Híbridos Enchufables (PHEV)' },
+    { id: 'MHEV', label: 'Mild-Hybrid (MHEV)' },
+    { id: 'REEV', label: 'Rango Extendido (REEV)' }
+  ];          //mapeamos tipos de vihiculos
+  
+  
+  const filteredVehicles = selectedType 
+    ? VEHICLES.filter(v => v.type === selectedType)
     : VEHICLES;
 
   return (
     <section id="vehicles" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">     // Revisar este
         <SectionHeading 
           title="El Ecosistema Eléctrico" 
           subtitle="Conoce de cerca los vehículos que están redefiniendo la forma en que nos movemos. Desde compactos urbanos hasta SUVs de alto rendimiento."
         />
 
         <Reveal type="fade-in" delay={200}>
-          <div className="mb-16">
-            <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Filtrar por Marcas Participantes</p>
-            <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
-              {BRANDS.map((brand, i) => (
-                <button 
-                  key={i} 
-                  onClick={() => setSelectedBrand(brand === selectedBrand ? null : brand)}
-                  className={`text-base font-bold px-5 py-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    brand === selectedBrand 
-                      ? 'bg-[#6A0032] text-white shadow-md scale-105' 
-                      : 'text-slate-600 hover:text-[#6A0032] bg-slate-100 hover:bg-slate-200 border border-transparent'
-                  }`}
-                >
-                  {brand}
-                </button>
+        <div className="mb-16">
+          <p className="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">
+            Filtrar por Tecnología
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
+            {TYPES.map((type, i) => (
+              <button 
+                key={i} 
+                onClick={() => setSelectedType(type.id === selectedType ? null : type.id)}
+                className={`text-base font-bold px-5 py-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  type.id === selectedType 
+                    ? 'bg-[#6A0032] text-white shadow-md scale-105' 
+                    : 'text-slate-600 hover:text-[#6A0032] bg-slate-100 hover:bg-slate-200 border border-transparent'
+                }`}
+              >
+                {type.label}
+              </button>
               ))}
               {selectedBrand && (
                 <button 
@@ -538,7 +530,7 @@ const Fleet = () => {
                 >
                   Ver todos
                 </button>
-              )}
+              )}              // Hasta aqui llega lo de los tipos de vihiculos
             </div>
           </div>
         </Reveal>
