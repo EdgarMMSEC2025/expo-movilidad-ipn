@@ -231,7 +231,7 @@ const Navbar = () => {
   
   <a href="#home" className="flex items-center">
     <img 
-      src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Logo_Instituto_Politécnico_Nacional.png" 
+      src="/FOTOS_AUTOS/Escudo_ipn.png" 
       alt="Logo IPN" 
       className="h-12 sm:h-16 w-auto object-contain mix-blend-multiply" 
     />
