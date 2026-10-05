@@ -7,10 +7,10 @@ const Sponsors = () => {
 
   const tiers = [
     { name: 'Nivel Bronce', title: 'Impulso ESIQIE', amount: '$300 - $1,499 MXN', icon: '🥉', desc: 'Certificado digital y nombre en el micrositio.', color: 'border-amber-700' },
-    { name: 'Nivel Plata', title: 'Innovación en Marcha', amount: '$1,500 - $9,999 MXN', icon: '🥈', desc: 'Acceso a seminario web sobre electromovilidad.', color: 'border-slate-400' },
-    { name: 'Nivel Oro', title: 'Energía para el Futuro', amount: '$10,000 - $49,999 MXN', icon: '🥇', desc: 'Nombre en Muro de Donantes y visita guiada técnica.', color: 'border-yellow-400' },
-    { name: 'Nivel Platino', title: 'Patrocinador Estratégico', amount: '$50,000 - $149,999 MXN', icon: '💎', desc: 'Placa nominal en cargador eléctrico (AC 7-21 kW).', color: 'border-cyan-400', featured: true },
-    { name: 'Nivel Diamante', title: 'Legado Sustentable', amount: '$150,000+ MXN', icon: '🏆', desc: 'Placa en estructura fotovoltaica y reconocimiento institucional.', color: 'border-purple-500' }
+    { name: 'Nivel Plata', title: 'Inovacion en Marcha - Adopta un Panel', amount: '$1,500 - $9,999 MXN', icon: '🥈', desc: 'Acceso a seminario web sobre electromovilidad.', color: 'border-slate-400' },
+    { name: 'Nivel Oro', title: 'Energia para el Futuro - Adopta un bloque', amount: '$10,000 - $49,999 MXN', icon: '🥇', desc: 'Nombre en Muro de Donantes y visita guiada técnica.', color: 'border-yellow-400' },
+    { name: 'Nivel Platino', title: 'Patrocinador Estratégico - Adopta un cargador', amount: '$50,000 - $149,999 MXN', icon: '✮', desc: 'Placa nominal en cargador eléctrico (AC 7-21 kW).', color: 'border-cyan-400', featured: true },
+    { name: 'Nivel Diamante', title: 'Legado Sustentable', amount: '$150,000+ MXN', icon: '💎', desc: 'Placa en estructura fotovoltaica y reconocimiento institucional.', color: 'border-purple-500' }
   ];
 
   return (
@@ -20,7 +20,7 @@ const Sponsors = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold text-slate-900 mb-4">Energía que Trasciende: ESIQIE Sustentable 2030</h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Sé parte de la transición energética. Ayúdanos a instalar la red de paneles solares y estaciones de carga para vehículos eléctricos en la ESIQIE.
+            Sé parte de la transición energética. Ayúdanos a instalar la red de paneles solares y estaciones de carga para vehículos eléctricos e híbridos enchufables en la ESIQIE.
           </p>
         </div>
 

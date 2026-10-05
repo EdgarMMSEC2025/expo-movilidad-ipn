@@ -330,7 +330,7 @@ const Navbar = () => {
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
               {/* Fecha objetivo: 28 de agosto de 2026, 10:00 AM */}
-    const difference = +new Date("2026-08-28T10:00:00") - +new Date();
+    const difference = +new Date("2026-10-15T09:00:00") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -386,16 +386,16 @@ const Hero = () => {
         <Reveal type="fade-up" delay={100}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium mb-6 shadow-xl">
             <span className="w-2.5 h-2.5 rounded-full bg-[#16A34A] animate-pulse"></span>
-            Zacatenco, IPN • 28 de Agosto 2026
+            Zacatenco, IPN • 15 de Octubre 2026
           </div>
         </Reveal>
         
         <Reveal type="fade-up" delay={300}>
   
              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
-               Proyecto <br className="hidden md:block"/>
+               PROYECTO <br className="hidden md:block"/>
              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-emerald-300">     {/* Aqui modifque titulo */} 
-             movibilidad sustentable IPN        
+             MOVIBILIDAD SUSTENTABLE IPN        
              </span>
              </h1>
          </Reveal>
@@ -612,7 +612,7 @@ const Program = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title="Programa Oficial" 
-          subtitle="Dos días intensivos de aprendizaje, exhibiciones tecnológicas y networking estratégico."
+          subtitle="Un dia intensivo de aprendizaje, exhibiciones tecnológicas y networking estratégico."
           centered={true}
         />
         <style dangerouslySetInnerHTML={{__html: `
@@ -688,7 +688,7 @@ const Registration = () => {
                     <div className="bg-white/10 p-4 rounded-xl shrink-0 backdrop-blur-sm"><Calendar size={28}/></div>
                     <div>
                       <h4 className="font-bold text-lg mb-1">Fecha y Hora</h4>
-                      <p className="text-slate-200">28 y 29 de agosto, 2026<br/>10:00 hrs a 17:00 hrs</p>
+                      <p className="text-slate-200">15 de octubre, 2026<br/>09:00 hrs a 15:00 hrs</p>
                     </div>
                   </div>
                   
@@ -713,20 +713,20 @@ const Registration = () => {
                     <div>
                       <h4 className="font-bold text-lg mb-1">Sede Oficial</h4>
                       <p className="text-slate-200 text-sm">
-                        Estacionamiento del edificio 1 de ESIME Zacatenco y Centro Cultural Jaime Torres Bodet. CDMX.
+                        Edificio 7 y Laboratorios Pesados de Metalurgia de la ESIQIE.
                       </p>
                     </div>
                   </div>
                   <div className="rounded-xl overflow-hidden shadow-md border border-white/20 flex-grow min-h-[200px]">
                     <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.6688233282102!2d-99.1368414326436!3d19.496982991862946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b7692ae4e5%3A0x3ab74018e5a86ad4!2sAparcamiento%2C%20Nueva%20Industrial%20Vallejo%2C%2007700%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e1!3m2!1ses-419!2smx!4v1787202296813!5m2!1ses-419!2smx" 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d674.5788862086886!2d-99.13394006742527!3d19.498999788872986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b994eae17f%3A0x45abd89d5c21720!2sLaboratorio%20de%20metal%C3%BArgica%20ESIQIE!5e1!3m2!1ses!2smx!4v1791175548302!5m2!1ses!2smx" 
                       width="100%" 
                       height="100%" 
                       style={{border:0}} 
                       allowFullScreen="" 
                       loading="lazy" 
                       referrerPolicy="strict-origin-when-cross-origin"
-                      title="Mapa Sede ESIME Zacatenco"
+                      title="Mapa Sede DIM Zacatenco"
                     ></iframe>
                   </div>
                 </div>
