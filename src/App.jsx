@@ -383,12 +383,12 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <Reveal type="fade-up" delay={100}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium mb-6 shadow-xl">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#16A34A] animate-pulse"></span>
-            Zacatenco, IPN • 15 de Octubre 2026
-          </div>
-        </Reveal>
+          <Reveal type="fade-up" delay={100}>
+              <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-blue-600 shadow-[0_0_25px_rgba(37,99,235,0.8)] border border-blue-400 text-white text-sm font-bold mb-6 transition-transform hover:scale-105">
+              <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></span>
+                  Zacatenco, IPN • 15 de Octubre 2026
+                 </div>
+          </Reveal>
         
         <Reveal type="fade-up" delay={300}>
   
