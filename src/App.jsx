@@ -92,23 +92,14 @@ const VEHICLES = [
 
 const PROGRAM_SCHEDULE = [
   {
-    date: '28 de Agosto',
+    date: '15 de Octubre',
     events: [
-      { time: '10:00', title: 'Inicio de la expo', speaker: 'Acceso General', category: 'Apertura' },
-      { time: '11:00', title: 'Inauguración Oficial', speaker: 'Autoridades IPN', category: 'Inauguración' },
-      { time: '11:30', title: 'Lanzamiento KIA EV 3', speaker: 'KIA', category: 'Lanzamiento' },
-      { time: '12:00', title: 'Lanzamiento GWM Ora 5', speaker: 'GWM', category: 'Lanzamiento' },
-      { time: '13:00', title: 'Presentación Sentra 2002 convertido a 100% eléctrico', speaker: 'Ing. César Gustavo Gómez Sierra', category: 'Presentación' },
-      { time: '15:00', title: 'Presentación Proyecto electromovilidad sustentable IPN 2026', speaker: 'M. en A. Edgar Maldonado Mosqueda', category: 'Presentación' }
+      { time: '09:00', title: 'Inicio de la expo', speaker: 'Acceso General', category: 'Apertura' },
+      { time: '11:00 - 12:30', title: 'Conferencia de inicio', speaker: 'Autoridades IPN', category: 'Conferencia' },
+      { time: '15:00', title: 'Cierre o clausura de la expo', speaker: 'Comité Organizador', category: 'Clausura' }
     ]
   },
-  {
-    date: '29 de Agosto',
-    events: [
-      { time: '13:00', title: 'Presentación ahorro de gasolina y electricidad en los vehículos', speaker: 'M. en A. Edgar Maldonado Mosqueda', category: 'Presentación' },
-      { time: '16:30', title: 'Clausura de la expo', speaker: 'Comité Organizador', category: 'Clausura' }
-    ]
-  }
+  
 ];
 
 const FAQS = [
