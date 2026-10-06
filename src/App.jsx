@@ -662,53 +662,66 @@ const Program = () => {
 
 const Registration = () => {
   return (
-    <section id="detalles" className="py-24 bg-[#F8FAFC]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal type="fade-up">
-          <div className="bg-[#6A0032] text-white rounded-[2rem] shadow-2xl p-8 md:p-12 relative overflow-hidden">
-            {/* Fondo de puntitos */}
+    <section id="register" className="py-24 bg-[#F8FAFC]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
+          
+          {/* Columna Izquierda: Formulario de Forms */}
+          <div className="w-full lg:w-3/5 p-4 md:p-8 relative min-h-[600px] flex flex-col">
+            <Reveal type="fade-right" className="w-full h-full flex-grow flex flex-col">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 px-4 pt-4">Obtén tu pase y Asegura tu lugar</h2>
+              <div className="flex-grow w-full rounded-xl overflow-hidden">
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=2fRL-ZeAlEet9qVGbKKFY5_1DTWk4O5HlOXCR7ztX2VUNzJBS09PWEtTR1A1WFJHMURDVDFVQlVCNi4u&embed=true" 
+                  frameBorder="0" 
+                  marginWidth="0" 
+                  marginHeight="0" 
+                  style={{border: "none", minHeight: "550px", maxHeight: "100vh"}} 
+                  allowFullScreen 
+                  title="Formulario de Registro"
+                ></iframe>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Columna Derecha: Detalles del Evento y MAPA */}
+          <div className="w-full lg:w-2/5 bg-[#6A0032] text-white p-8 md:p-10 flex flex-col justify-between relative overflow-hidden">
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
             
-            <div className="relative z-10">
-              <h3 className="text-3xl font-bold mb-10 text-center">Detalles del Evento</h3>
+            <div className="relative z-10 flex flex-col h-full">
+              <h3 className="text-3xl font-bold mb-6">Detalles del Evento</h3>
               
-              <div className="grid md:grid-cols-2 gap-10">
-                {/* Columna Izquierda: Info y Contacto */}
-                <div className="space-y-8">
-                  <div className="flex items-start gap-5">
-                    <div className="bg-white/10 p-4 rounded-xl shrink-0 backdrop-blur-sm"><Calendar size={28}/></div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-1">Fecha y Hora</h4>
-                      <p className="text-slate-200">15 de octubre, 2026<br/>09:00 hrs a 15:00 hrs</p>
-                    </div>
+              <div className="space-y-6 flex-grow">
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/10 p-3 rounded-xl shrink-0 backdrop-blur-sm"><Calendar size={24}/></div>
+                  <div>
+                    <h4 className="font-bold text-base mb-1">Fecha y Hora</h4>
+                    <p className="text-slate-200 text-sm">15 de octubre, 2026<br/>09:00 hrs a 15:00 hrs</p>
                   </div>
-                  
-                  <div className="flex items-start gap-5">
-                    <div className="bg-white/10 p-4 rounded-xl shrink-0 backdrop-blur-sm"><Mail size={28}/></div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-1">Contacto Organizador</h4>
-                      <p className="text-slate-200">emaldonadom@ipn.mx<br/>WhatsApp: 55 3287 3697</p>
-                    </div>
-                  </div>
-
-                  <div className="mt-8 bg-[#8B0042] rounded-2xl p-6 shadow-inner">
-                    <h4 className="font-bold mb-3 flex items-center gap-2"><ShieldCheck size={24} className="text-[#16A34A]"/> Acceso Seguro</h4>
-                    <p className="text-sm text-slate-200 leading-relaxed">Contamos con estrictos protocolos de protección civil, servicios médicos de primer contacto y seguridad en todas las zonas de exhibición.</p>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/10 p-3 rounded-xl shrink-0 backdrop-blur-sm"><Mail size={24}/></div>
+                  <div>
+                    <h4 className="font-bold text-base mb-1">Contacto Organizador</h4>
+                    <p className="text-slate-200 text-sm">emaldonadom@ipn.mx<br/>WhatsApp: 55 3287 3697</p>
                   </div>
                 </div>
 
-                {/* Columna Derecha: Mapa */}
-                <div className="flex flex-col">
-                  <div className="flex items-start gap-5 mb-4">
-                    <div className="bg-white/10 p-4 rounded-xl shrink-0 backdrop-blur-sm"><MapPin size={28}/></div>
+                {/* SECCIÓN DEL MAPA */}
+                <div className="flex flex-col mt-4">
+                  <div className="flex items-start gap-4 mb-3">
+                    <div className="bg-white/10 p-3 rounded-xl shrink-0 backdrop-blur-sm"><MapPin size={24}/></div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1">Sede Oficial</h4>
-                      <p className="text-slate-200 text-sm">
-                        Edificio 7 y Laboratorios Pesados de Metalurgia de la ESIQIE.
-                      </p>
+                      <h4 className="font-bold text-base mb-1">Sede Oficial</h4>
+                      <p className="text-slate-200 text-sm">Edificio 7 y Laboratorios Pesados de Metalurgia de la ESIQIE.</p>
                     </div>
                   </div>
-                  <div className="rounded-xl overflow-hidden shadow-md border border-white/20 flex-grow min-h-[200px]">
+                  
+                  {/* Aquí está incrustado tu iframe del mapa */}
+                  <div className="rounded-xl overflow-hidden shadow-md border border-white/20 h-[180px] w-full">
                     <iframe 
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d674.5788862086886!2d-99.13394006742527!3d19.498999788872986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b994eae17f%3A0x45abd89d5c21720!2sLaboratorio%20de%20metal%C3%BArgica%20ESIQIE!5e1!3m2!1ses!2smx!4v1791175548302!5m2!1ses!2smx" 
                       width="100%" 
@@ -717,15 +730,22 @@ const Registration = () => {
                       allowFullScreen="" 
                       loading="lazy" 
                       referrerPolicy="strict-origin-when-cross-origin"
-                      title="Mapa Sede DIM Zacatenco"
+                      title="Mapa Sede ESIQIE"
                     ></iframe>
                   </div>
                 </div>
               </div>
               
+            {/* Botón de Acceso Seguro al final */}
+              <div className="relative z-10 mt-6 bg-[#8B0042] rounded-2xl p-4 shadow-inner">
+                <h4 className="font-bold mb-2 flex items-center gap-2 text-sm"><ShieldCheck size={20} className="text-[#16A34A]"/> Acceso Seguro</h4>
+                <p className="text-xs text-slate-200 leading-relaxed">Contamos con estrictos protocolos de protección civil, servicios médicos y seguridad.</p>
+              </div>
             </div>
+
           </div>
-        </Reveal>
+
+        </div>
       </div>
     </section>
   );
