@@ -95,8 +95,8 @@ const PROGRAM_SCHEDULE = [
     date: '15 de Octubre',
     events: [
       { time: '09:00', title: 'Inicio de la expo', speaker: 'Acceso General', category: 'Apertura' },
-      { time: '11:00 - 12:30', title: 'Conferencia de inicio', speaker: 'Autoridades IPN', category: 'Conferencia' },
-      { time: '15:00', title: 'Cierre o clausura de la expo', speaker: 'Comité Organizador', category: 'Clausura' }
+      { time: '11:15 - 12:30', title: 'Conferencia de inicio', speaker: 'Autoridades IPN', category: 'Conferencia' },
+      { time: '17:00', title: 'Cierre o clausura de la expo', speaker: 'Comité Organizador', category: 'Clausura' }
     ]
   },
   
