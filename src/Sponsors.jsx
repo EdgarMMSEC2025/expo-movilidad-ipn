@@ -24,6 +24,39 @@ const Sponsors = () => {
     }, 150);
   };
 
+      
+  const handleSubmitForm = (e) => {
+    e.preventDefault(); 
+
+    
+    const formData = new FormData(e.target);
+    const dataToSend = {
+      Nombre: formData.get('Nombre'),
+      Correo: formData.get('Correo'),
+      Nivel: selectedTier.name,
+      Monto: selectedTier.id === 'bronce' ? formData.get('Monto') : selectedTier.amount
+    };
+
+    
+    fetch('https://sheetdb.io/api/v1/lm54bvx7sz457', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ data: [dataToSend] })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      alert("¡Registro exitoso! Los datos se han guardado en Google Sheets.");
+      setSelectedTier(null); 
+    })
+    .catch((error) => {
+      alert("Hubo un error al guardar los datos.");
+      console.error(error);
+    });
+  };
+
   return (
     <section id="inversores" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,37 +148,62 @@ const Sponsors = () => {
               </p>
               
               <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 text-left mb-8">
-                <form className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmitForm} className="space-y-4">
+                     <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium mb-1 text-slate-300">Nombre o Empresa</label>
-                      <input type="text" className="w-full bg-slate-700 border border-slate-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#16A34A]" placeholder="Ej. Juan Pérez / Empresa SA" />
+                 <label className="block text-sm font-medium mb-1 text-slate-300">Nombre o Empresa</label>
+                     <input 
+                     type="text" 
+                      name="Nombre"
+                       required
+                 className="w-full bg-slate-700 border border-slate-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#16A34A]" 
+                    placeholder="Ej. Juan Pérez / Empresa SA" 
+                  />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-1 text-slate-300">Correo Institucional / Contacto</label>
-                      <input type="email" className="w-full bg-slate-700 border border-slate-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#16A34A]" placeholder="correo@ejemplo.com" />
-                    </div>
-                  </div>
-                  {selectedTier.id === 'bronce' && (
-                    <div>
-                      <label className="block text-sm font-medium mb-1 text-slate-300">Monto a Donar (MXN)</label>
-                      <input type="number" min="300" max="14999" className="w-full bg-slate-700 border border-slate-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#16A34A]" placeholder="Mínimo $300" />
-                    </div>
-                  )}
-                </form>
-              </div>
+                   <label className="block text-sm font-medium mb-1 text-slate-300">Correo Institucional / Contacto</label>
+                  <input 
+                  type="email" 
+                   name="Correo"
+                    required
+                    className="w-full bg-slate-700 border border-slate-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#16A34A]" 
+                    placeholder="correo@ejemplo.com" 
+                      />
+                     </div>
+                        </div>
+  
+  {selectedTier.id === 'bronce' && (
+    <div>
+      <label className="block text-sm font-medium mb-1 text-slate-300">Monto a Donar (MXN)</label>
+      <input 
+        type="number" 
+        name="Monto"
+        min="300" 
+        max="14999"
+        required
+        className="w-full bg-slate-700 border border-slate-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#16A34A]" 
+        placeholder="Mínimo $300" 
+      />
+    </div>
+  )}
 
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <button className="bg-[#16A34A] hover:bg-green-500 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-                  Proceder a Plataforma de Pago Seguro
-                </button>
-                <button 
-                  onClick={() => setSelectedTier(null)}
-                  className="bg-transparent border border-slate-500 hover:border-white text-slate-300 hover:text-white font-bold py-3 px-8 rounded-lg transition-colors"
-                >
-                  Cancelar
-                </button>
-              </div>
+  <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+    <button 
+      type="submit"
+      className="bg-[#16A34A] hover:bg-green-500 text-white font-bold py-3 px-8 rounded-lg transition-colors"
+    >
+      Confirmar Registro
+    </button>
+    <button 
+      type="button"
+      onClick={() => setSelectedTier(null)}
+      className="bg-transparent border border-slate-500 hover:border-white text-slate-300 hover:text-white font-bold py-3 px-8 rounded-lg transition-colors"
+    >
+      Cancelar
+    </button>
+  </div>
+   </form>
+   </div>
             </div>
           </div>
         )}
