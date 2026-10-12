@@ -826,7 +826,7 @@ const Footer = () => (
           <ul className="space-y-5 text-base text-slate-400">
             <li className="flex items-start gap-4">
               <MapPin size={20} className="text-[#6A0032] shrink-0 mt-1" />
-              <span>Estacionamiento del edificio 1 de ESIME Zacatenco, CDMX</span>
+              <span>Edificio 7 y Laboratorios Pesados de Metalurgia de la ESIQIE, CDMX</span>
             </li>
             <li className="flex items-center gap-4">
               <Phone size={20} className="text-[#6A0032] shrink-0" />
