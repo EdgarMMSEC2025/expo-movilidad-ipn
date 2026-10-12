@@ -698,7 +698,7 @@ const Registration = () => {
                   <div className="bg-white/10 p-3 rounded-xl shrink-0 backdrop-blur-sm"><Calendar size={24}/></div>
                   <div>
                     <h4 className="font-bold text-base mb-1">Fecha y Hora</h4>
-                    <p className="text-slate-200 text-sm">15 de octubre, 2026<br/>09:00 hrs a 15:00 hrs</p>
+                    <p className="text-slate-200 text-sm">15 de octubre, 2026<br/>09:00 hrs a 17:00 hrs</p>
                   </div>
                 </div>
                 
