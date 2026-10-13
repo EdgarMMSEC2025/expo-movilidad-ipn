@@ -425,24 +425,23 @@ const About = () => {
     <section id="about" className="py-24 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <Reveal type="fade-right">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#6A0032] to-[#16A34A] rounded-2xl transform translate-x-4 translate-y-4 opacity-20 blur-lg"></div>
               <img 
                 src="https://rerenergygroup.com.mx/wp-content/uploads/estacion-de-carga-electrica-para-autos-que-es-un-carport-solar.webp" 
-                alt="Carport solar y estación de carga para vehículos eléctricos" 
+                alt="Carport solar y estación de carga" 
                 className="relative rounded-2xl shadow-2xl object-cover h-[500px] w-full"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100">
                 <div className="flex items-center gap-4">
                   <div className="bg-[#16A34A]/10 p-3 rounded-full text-[#16A34A]">
-                    <ShieldCheck size={32} />
+                    <Leaf size={32} />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">PROMOVIENDO AL</p>
-                    <p className="text-lg font-bold text-[#6A0032]">IPN Sustentable</p>
+                    <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">CERO EMISIONES</p>
+                    <p className="text-lg font-bold text-[#6A0032]">100% Off-Grid</p>
                   </div>
                 </div>
               </div>
@@ -451,23 +450,25 @@ const About = () => {
 
           <Reveal type="fade-up" delay={200}>
             <div>
-              <h2 className="text-sm font-bold tracking-widest text-[#6A0032] uppercase mb-3">La Técnica al Servicio de la Patria</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">Liderando la transición hacia un futuro más limpio.</h3>
+              <h2 className="text-sm font-bold tracking-widest text-[#6A0032] uppercase mb-3">Piloto Institucional ESIQIE</h2>
+              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">Electrolinera Autónoma Carport</h3>
               <p className="text-slate-600 text-lg mb-6 leading-relaxed">
-                La Expo Electromovilidad IPN 2026 es un espacio de integración, innovación y transferencia de conocimiento que impulsa la movilidad sostenible y la transición energética en México. Organizada por el Instituto Politécnico Nacional, tiene como objetivo acercar a la comunidad académica, al sector productivo, al gobierno y a la sociedad a las tecnologías que contribuirán a la reducción de emisiones, la eficiencia energética y el desarrollo de ciudades más sostenibles.
+                Más que infraestructura, un <strong>laboratorio vivo</strong>. Este proyecto transforma el estacionamiento de la ESIQIE en un ecosistema circular de electromovilidad. Es una estación de carga 100% aislada de la red eléctrica que integra tecnología física, digital y gestión institucional para impulsar la soberanía energética del IPN.
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  'Exhibición de vehículos eléctricos (BEV), híbridos (HEV) e híbridos enchufables (PHEV), mostrando sus beneficios tecnológicos, ambientales y económicos.',
-                  'Demostración de infraestructura de recarga inteligente, energías renovables y soluciones de gestión energética para la movilidad eléctrica.',
-                  'Presentación de proyectos de investigación, innovación y desarrollo tecnológico del IPN relacionados con electromovilidad, almacenamiento de energía y sostenibilidad.',
-                  'Vinculación estratégica entre academia, industria, gobierno y organismos de financiamiento para acelerar la adopción de tecnologías limpias.',
-                  'Difusión de iniciativas alineadas con los Objetivos de Desarrollo Sostenible (ODS) y las metas de reducción de emisiones de carbono.',
-                  'Promoción de la formación de talento especializado y la generación de capacidades técnicas para la expansión de la electromovilidad en más de 20 unidades académicas del IPN.'
+                  { title: 'Generación Fotovoltaica', desc: '35.2 kWp mediante una estructura Carport optimizada para no afectar edificios.' },
+                  { title: 'Almacenamiento Second-Life', desc: '190 kWh reutilizando baterías recuperadas de vehículos eléctricos (economía circular).' },
+                  { title: 'Carga Inteligente', desc: '4 módulos de carga AC Nivel 2 gestionados por plataforma digital OCPP en tiempo real.' },
+                  { title: 'Impacto Ambiental', desc: 'Evita directamente la emisión de 5 a 7 toneladas de CO₂e al año.' },
+                  { title: 'Excelencia Académica', desc: 'Acceso práctico (hands-on) a tecnología de microrredes para estudiantes y docentes.' }
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle className="text-[#16A34A] shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">{item}</span>
+                    <div>
+                      <span className="font-bold text-slate-800">{item.title}: </span>
+                      <span className="text-slate-700">{item.desc}</span>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -475,6 +476,7 @@ const About = () => {
           </Reveal>
         </div>
 
+        {/* Las estadísticas inferiores */}
         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6">
           {STATS.map((stat, i) => (
             <Reveal key={stat.id} type="fade-up" delay={i * 100}>
