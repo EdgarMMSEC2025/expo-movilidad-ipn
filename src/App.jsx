@@ -422,74 +422,112 @@ const Hero = () => {
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 bg-gradient-to-b from-[#F8FAFC] to-white relative overflow-hidden">
+      {/* Elementos decorativos de fondo */}
+      <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-96 h-96 bg-[#16A34A]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-[500px] h-[500px] bg-[#6A0032]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* LADO IZQUIERDO: Collage de imágenes (Bento Grid) */}
           <Reveal type="fade-right">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#6A0032] to-[#16A34A] rounded-2xl transform translate-x-4 translate-y-4 opacity-20 blur-lg"></div>
-              <img 
-                src="https://rerenergygroup.com.mx/wp-content/uploads/estacion-de-carga-electrica-para-autos-que-es-un-carport-solar.webp" 
-                alt="Carport solar y estación de carga" 
-                className="relative rounded-2xl shadow-2xl object-cover h-[500px] w-full"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100">
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#16A34A]/10 p-3 rounded-full text-[#16A34A]">
-                    <Leaf size={32} />
+            <div className="grid grid-cols-2 gap-4 relative">
+              {/* Tarjeta flotante "Cero Emisiones" */}
+              <div className="absolute -left-6 -top-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 z-20 animate-bounce-slow">
+                <div className="flex items-center gap-3">
+                  <div className="bg-gradient-to-br from-[#16A34A] to-emerald-400 p-2 rounded-xl text-white shadow-lg shadow-emerald-200">
+                    <Leaf size={24} />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">CERO EMISIONES</p>
-                    <p className="text-lg font-bold text-[#6A0032]">100% Off-Grid</p>
+                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider leading-none">Status</p>
+                    <p className="text-sm font-extrabold text-slate-800">100% Off-Grid</p>
                   </div>
                 </div>
+              </div>
+
+              {/* Imagen Principal (Alta) */}
+              <div className="col-span-1 row-span-2 rounded-3xl overflow-hidden shadow-2xl shadow-[#16A34A]/20 border-4 border-white transform transition-transform hover:scale-[1.02] duration-500">
+                <img 
+                  src="https://images.unsplash.com/photo-1660236822651-4263beb35fa8?q=80&w=800&auto=format&fit=crop" 
+                  alt="Panel Solar Carport" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Imagen Secundaria 1 (Arriba derecha) */}
+              <div className="col-span-1 rounded-3xl overflow-hidden shadow-xl border-4 border-white transform transition-transform hover:scale-[1.03] duration-500">
+                <img 
+                  src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=600&auto=format&fit=crop" 
+                  alt="Vehículo Eléctrico Cargando" 
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+
+              {/* Imagen Secundaria 2 (Abajo derecha) */}
+              <div className="col-span-1 rounded-3xl overflow-hidden shadow-xl border-4 border-white transform transition-transform hover:scale-[1.03] duration-500">
+                <img 
+                  src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=600&auto=format&fit=crop" 
+                  alt="Baterías de almacenamiento" 
+                  className="w-full h-48 object-cover"
+                />
               </div>
             </div>
           </Reveal>
 
+          {/* LADO DERECHO: Textos y características */}
           <Reveal type="fade-up" delay={200}>
-            <div>
-              <h2 className="text-sm font-bold tracking-widest text-[#6A0032] uppercase mb-3">Piloto Institucional ESIQIE</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">Electrolinera Autónoma Carport</h3>
-              <p className="text-slate-600 text-lg mb-6 leading-relaxed">
-                Más que infraestructura, un <strong>laboratorio vivo</strong>. Este proyecto transforma el estacionamiento de la ESIQIE en un ecosistema circular de electromovilidad. Es una estación de carga 100% aislada de la red eléctrica que integra tecnología física, digital y gestión institucional para impulsar la soberanía energética del IPN.
+            <div className="lg:pl-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6A0032]/10 text-[#6A0032] text-sm font-bold uppercase tracking-widest mb-4">
+                <span className="w-2 h-2 rounded-full bg-[#6A0032] animate-pulse"></span>
+                Piloto Institucional ESIQIE
+              </div>
+              
+              <h3 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
+                Electrolinera Autónoma <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-[#047857]">Carport</span>
+              </h3>
+              
+              <p className="text-slate-600 text-lg mb-8 leading-relaxed">
+                Más que infraestructura, un <strong className="text-[#6A0032]">laboratorio vivo</strong>. Este proyecto transforma el estacionamiento de la ESIQIE en un ecosistema circular de electromovilidad. Es una estación de carga 100% aislada de la red eléctrica que integra tecnología física, digital y gestión institucional para impulsar la soberanía energética del IPN.
               </p>
-              <ul className="space-y-4 mb-8">
+              
+              <div className="space-y-5">
                 {[
-                  { title: 'Generación Fotovoltaica', desc: '35.2 kWp mediante una estructura Carport optimizada para no afectar edificios.' },
-                  { title: 'Almacenamiento Second-Life', desc: '190 kWh reutilizando baterías recuperadas de vehículos eléctricos (economía circular).' },
-                  { title: 'Carga Inteligente', desc: '4 módulos de carga AC Nivel 2 gestionados por plataforma digital OCPP en tiempo real.' },
-                  { title: 'Impacto Ambiental', desc: 'Evita directamente la emisión de 5 a 7 toneladas de CO₂e al año.' },
-                  { title: 'Excelencia Académica', desc: 'Acceso práctico (hands-on) a tecnología de microrredes para estudiantes y docentes.' }
+                  { title: 'Generación Fotovoltaica', desc: '35.2 kWp mediante estructura Carport.', icon: <Zap size={20} />, color: 'text-amber-500', bg: 'bg-amber-100' },
+                  { title: 'Almacenamiento Second-Life', desc: '190 kWh reutilizando baterías de EV.', icon: <BatteryCharging size={20} />, color: 'text-emerald-600', bg: 'bg-emerald-100' },
+                  { title: 'Carga Inteligente', desc: '4 módulos AC Nivel 2 gestionados por OCPP.', icon: <Car size={20} />, color: 'text-blue-600', bg: 'bg-blue-100' }
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle className="text-[#16A34A] shrink-0 mt-1" size={20} />
-                    <div>
-                      <span className="font-bold text-slate-800">{item.title}: </span>
-                      <span className="text-slate-700">{item.desc}</span>
+                  <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div className={`${item.bg} ${item.color} p-3 rounded-xl shadow-sm shrink-0`}>
+                      {item.icon}
                     </div>
-                  </li>
+                    <div>
+                      <h4 className="font-bold text-slate-800 text-base">{item.title}</h4>
+                      <p className="text-slate-500 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </Reveal>
         </div>
 
-        {/* Las estadísticas inferiores */}
-        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6">
+        {/* Las estadísticas inferiores (se mantienen igual, pero con márgenes ajustados) */}
+        <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-6">
           {STATS.map((stat, i) => (
             <Reveal key={stat.id} type="fade-up" delay={i * 100}>
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
-                <div className="inline-flex p-4 rounded-xl bg-slate-50 text-[#6A0032] mb-4 group-hover:bg-[#6A0032] group-hover:text-white transition-colors">
+              <div className="bg-white p-8 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 text-center hover:-translate-y-2 transition-transform duration-300 group">
+                <div className="inline-flex p-4 rounded-2xl bg-slate-50 text-[#6A0032] mb-5 group-hover:bg-gradient-to-br group-hover:from-[#6A0032] group-hover:to-[#8B0042] group-hover:text-white transition-all shadow-sm">
                   <stat.icon size={32} />
                 </div>
-                <h4 className="text-4xl font-extrabold text-slate-900 mb-2">{stat.value}</h4>
-                <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide">{stat.label}</p>
+                <h4 className="text-4xl font-black text-slate-900 mb-2">{stat.value}</h4>
+                <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">{stat.label}</p>
               </div>
             </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );
