@@ -10,7 +10,7 @@ const Sponsors = () => {
   const [selectedTier, setSelectedTier] = useState(null);
 
   const tiers = [
-    { id: 'bronce', name: 'Nivel Bronce', title: 'Impulso ESIQIE', amount: '$300 - $14,999 MXN', icon: '🥉', desc: 'Aportación económica directa para el financiamiento del proyecto.', color: 'border-amber-700' },
+    { id: 'bronce', name: 'Nivel Bronce', title: 'Impulso ESIQIE', amount: 'Material Eléctrico Menor', icon: '🥉', desc: 'Donación de cableado (THWN-2/LS), conectores MC4, tubería o pastillas termomagnéticas.', color: 'border-amber-700' },
     { id: 'plata', name: 'Nivel Plata', title: 'Innovación en Marcha', amount: 'Panel Solar', icon: '☀️', desc: 'Donación en especie de un panel solar para la estructura fotovoltaica.', color: 'border-slate-400' },
     { id: 'oro', name: 'Nivel Oro', title: 'Energía para el Futuro', amount: 'Bloque Energético', icon: '⚡', desc: 'Donación de un bloque completo del sistema de energía.', color: 'border-yellow-400' },
     { id: 'platino', name: 'Nivel Platino', title: 'Patrocinador Estratégico', amount: 'Cargador Eléctrico', icon: '🔌', desc: 'Donación directa de un cargador eléctrico para vehículos.', color: 'border-cyan-400', featured: true },
@@ -174,15 +174,13 @@ const Sponsors = () => {
   
   {selectedTier.id === 'bronce' && (
     <div>
-      <label className="block text-sm font-medium mb-1 text-slate-300">Monto a Donar (MXN)</label>
-      <input 
-        type="number" 
-        name="Monto"
-        min="300" 
-        max="14999"
-        required
-        className="w-full bg-slate-700 border border-slate-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#16A34A]" 
-        placeholder="Mínimo $300" 
+      <label className="block text-sm font-medium mb-1 text-slate-300">Material a Aportar</label>
+    <input 
+      type="text" 
+      name="Monto" 
+      required
+      className="w-full bg-slate-700 border border-slate-600 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#16A34A]" 
+      placeholder="Ej. Conectores M4, 2 extintores, Cableado etc." 
       />
     </div>
   )}

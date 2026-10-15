@@ -95,7 +95,7 @@ const PROGRAM_SCHEDULE = [
     date: '15 de Octubre',
     events: [
       { time: '09:00', title: 'Inicio de la expo', speaker: 'Acceso General', category: 'Apertura' },
-      { time: '11:15 - 12:30', title: 'Conferencia de inicio: De la Innovación a la Acción Climática: Movilidad Sustentable como Motor de la Transición Energética en el IPN: electrolinera solar autónoma como laboratorio viviente para la acción climática', speaker: 'Edgar Maldonado Mosqueda & Luis Enrique Camacho Camacho', category: 'Conferencia' },
+      { time: '11:15 - 12:30', title: 'De la Innovación a la Acción Climática: Movilidad Sustentable como Motor de la Transición Energética en el IPN: electrolinera solar autónoma como laboratorio viviente para la acción climática', speaker: 'Edgar Maldonado Mosqueda & Luis Enrique Camacho Camacho', category: 'Conferencia' },
       { time: '17:00', title: 'Cierre o clausura de la expo', speaker: 'Comité Organizador', category: 'Clausura' }
     ]
   },
