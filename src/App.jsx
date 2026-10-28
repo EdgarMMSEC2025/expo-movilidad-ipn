@@ -880,7 +880,7 @@ const Evidence = () => {
           <Reveal type="fade-left" delay={600} className="md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden relative group border border-slate-700 shadow-2xl">
             {/* Recuerda cambiar el nombre de este video por el real */}
             <video 
-              src="public\FOTOS_AUTOS\WhatsApp Video 2026-10-26 at 11.10.09 PM.mp4" 
+              src="/FOTOS_AUTOS/WhatsApp Video 2026-10-26 at 11.10.09 PM.mp4" 
               autoPlay 
               loop 
               muted 
