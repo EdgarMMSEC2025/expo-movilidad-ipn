@@ -818,7 +818,7 @@ const Evidence = () => {
           <Reveal type="fade-right" delay={100} className="md:col-span-1 md:row-span-2 rounded-3xl overflow-hidden relative group border border-slate-700 shadow-2xl">
             {/* Recuerda cambiar el nombre de este video por el real */}
             <video 
-              src="public\FOTOS_AUTOS\WhatsApp Video 2026-10-26 at 11.10.16 PM.mp4"
+              src="/FOTOS_AUTOS/WhatsApp Video 2026-10-26 at 11.10.16 PM.mp4"
               autoPlay 
               loop 
               muted 
@@ -846,7 +846,7 @@ const Evidence = () => {
           <Reveal type="fade-left" delay={300} className="md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden relative group border border-slate-700 shadow-2xl">
             {/* Recuerda cambiar el nombre de este video por el real */}
             <video 
-              src="public\FOTOS_AUTOS\WhatsApp Video 2026-10-26 at 11.09.59 PM.mp4" 
+              src="/FOTOS_AUTOS/WhatsApp Video 2026-10-26 at 11.09.59 PM.mp4" 
               autoPlay 
               loop 
               muted 
