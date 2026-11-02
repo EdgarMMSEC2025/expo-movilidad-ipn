@@ -5,7 +5,7 @@ import {
   Car, Calendar, MapPin, Mail, Phone, CheckCircle, 
   ArrowRight, Leaf, ShieldCheck, Users, Clock,
   ExternalLink,
-  Timer
+  Timer, Youtube, Instragram, Facebook
 } from 'lucide-react';
 
 const THEME = {
@@ -855,6 +855,27 @@ const Evidence = () => {
             </div>
           </Reveal>
 
+        </div>
+
+        {/* NUEVA SECCIÓN DE REDES SOCIALES */}
+        <div className="text-center pt-8 border-t border-slate-800">
+          <Reveal type="fade-up">
+            <h4 className="text-xl font-bold text-white mb-6">Síguenos en nuestras redes oficiales</h4>
+            <div className="flex justify-center gap-6">
+              {/* Cambia el href="#" por el link real de tu Facebook */}
+              <a href="#" target="_blank" rel="noreferrer" className="p-4 bg-slate-800/80 backdrop-blur-md rounded-full text-slate-300 hover:text-white hover:bg-[#1877F2] transition-all duration-300 hover:scale-110 shadow-lg">
+                <Facebook size={28} />
+              </a>
+              {/* Cambia el href="#" por el link real de tu Instagram */}
+              <a href="#" target="_blank" rel="noreferrer" className="p-4 bg-slate-800/80 backdrop-blur-md rounded-full text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] transition-all duration-300 hover:scale-110 shadow-lg">
+                <Instagram size={28} />
+              </a>
+              {/* Cambia el href="#" por el link real de tu YouTube */}
+              <a href="#" target="_blank" rel="noreferrer" className="p-4 bg-slate-800/80 backdrop-blur-md rounded-full text-slate-300 hover:text-white hover:bg-[#FF0000] transition-all duration-300 hover:scale-110 shadow-lg">
+                <Youtube size={28} />
+              </a>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
