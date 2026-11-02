@@ -640,60 +640,23 @@ const Fleet = () => {
 const Program = () => {
   return (
     <section id="program" className="py-24 bg-[#0F172A] text-white overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <SectionHeading 
           title="Programa Oficial" 
-          subtitle="Un dia intensivo de aprendizaje, exhibiciones tecnológicas y networking estratégico."
+          subtitle="Acompáñanos en nuestras futuras exhibiciones tecnológicas y conferencias."
           centered={true}
         />
-        <style dangerouslySetInnerHTML={{__html: `
-          #program h2 { color: white !important; }
-          #program p { color: #94a3b8 !important; }
-        `}} />
-
-        <div className="mt-20 space-y-24">
-          {PROGRAM_SCHEDULE.map((day, dayIndex) => (
-            <div key={dayIndex} className="relative">
-              <Reveal type="fade-up">
-                <div className="flex justify-center mb-16">
-                  <h3 className="text-3xl font-bold text-[#16A34A] border-b-2 border-slate-700 pb-4 px-8 tracking-tight">{day.date}</h3>
-                </div>
-              </Reveal>
-
-              <div className="relative">
-                <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-slate-700 transform -translate-x-1/2"></div>
-                
-                <div className="space-y-12">
-                  {day.events.map((item, i) => (
-                    <Reveal key={`${dayIndex}-${i}`} type={i % 2 === 0 ? 'fade-right' : 'fade-left'} delay={i * 100}>
-                      <div className={`relative flex flex-col md:flex-row items-center justify-between w-full ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                        
-                        <div className="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-[#16A34A] border-4 border-[#0F172A] transform md:-translate-x-1/2 z-10 shadow-[0_0_15px_rgba(22,163,74,0.6)] hidden md:block"></div>
-                        
-                        <div className="w-full md:w-[45%]">
-                          <div className="bg-slate-800/80 backdrop-blur-md p-6 lg:p-8 rounded-2xl border border-slate-700 hover:border-[#16A34A]/60 transition-colors shadow-lg">
-                            <div className="flex flex-wrap items-center gap-3 mb-3">
-                              <span className="text-lg font-bold text-[#16A34A] font-mono">{item.time}</span>
-                              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-700/50 text-slate-300 border border-slate-600">
-                                {item.category}
-                              </span>
-                            </div>
-                            <h4 className="text-xl font-bold text-white mb-2 leading-tight">{item.title}</h4>
-                            <p className="text-slate-400 text-sm flex items-center gap-2">
-                              <Users size={16} className="text-slate-500 shrink-0"/> 
-                              <span className="truncate" title={item.speaker}>{item.speaker}</span>
-                            </p>
-                          </div>
-                        </div>
-                        
-                        <div className="hidden md:block w-[45%]"></div>
-                      </div>
-                    </Reveal>
-                  ))}
-                </div>
-              </div>
+        
+        <div className="mt-16 bg-slate-800/50 backdrop-blur-md border border-slate-700 rounded-[2rem] p-10 md:p-16 shadow-2xl">
+          <Reveal type="fade-up">
+            <div className="w-20 h-20 bg-slate-700/50 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Calendar size={40} className="text-[#16A34A]" />
             </div>
-          ))}
+            <h3 className="text-3xl font-extrabold text-white mb-4">Próximos Eventos</h3>
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+              La agenda de la siguiente edición se encuentra en desarrollo. Mantente atento a nuestros canales oficiales donde pronto anunciaremos las fechas, conferencias y dinámicas.
+            </p>
+          </Reveal>
         </div>
       </div>
     </section>
