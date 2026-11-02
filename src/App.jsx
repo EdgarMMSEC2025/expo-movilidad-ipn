@@ -757,13 +757,11 @@ const Registration = () => {
 const Evidence = () => {
   return (
     <section id="evidencia" className="py-24 bg-[#0F172A] relative overflow-hidden">
-      {/* Elementos decorativos oscuros para resaltar las imágenes */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#6A0032]/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#16A34A]/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Título de la Sección */}
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold tracking-widest text-[#16A34A] uppercase mb-3">Galería Oficial</h2>
           <h3 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
@@ -774,87 +772,62 @@ const Evidence = () => {
           </p>
         </div>
 
-        {/* BENTO GRID: Galería de Videos y Fotos Reales */}
-        <div className="grid grid-cols-1 md:grid-cols-4 md:auto-rows-[250px] gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 md:auto-rows-[250px] gap-4 mb-20">
           
-          {/* Item 1: Video Principal (Ocupa 2 filas, 1 columna a la izquierda) */}
           <Reveal type="fade-right" delay={100} className="md:col-span-1 md:row-span-2 rounded-3xl overflow-hidden relative group border border-slate-700 shadow-2xl">
-            {/* Recuerda cambiar el nombre de este video por el real */}
-            <video 
-              src="/FOTOS_AUTOS/WhatsApp Video 2026-10-26 at 11.10.16 PM.mp4"
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            ></video>
+            <video src="/FOTOS_AUTOS/WhatsApp Video 2026-10-26 at 11.10.16 PM.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></video>
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
               <p className="text-white font-bold">Ford F-150 Platinum</p>
             </div>
           </Reveal>
 
-          {/* Item 2: Foto Burro Blanco GWM (Ocupa 2 columnas, 1 fila en el centro arriba) */}
           <Reveal type="fade-down" delay={200} className="md:col-span-2 md:row-span-1 rounded-3xl overflow-hidden relative group border border-slate-700 shadow-2xl">
-            <img 
-              src="/FOTOS_AUTOS/WhatsApp Image 2026-10-26 at 11.10.47 PM.jpeg" 
-              alt="Mascota IPN y GWM" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
+            <img src="/FOTOS_AUTOS/WhatsApp Image 2026-10-26 at 11.10.47 PM.jpeg" alt="Mascota IPN y GWM" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
               <p className="text-white font-bold">La mascota oficial con GWM Vallejo</p>
             </div>
           </Reveal>
 
-          {/* Item 3: Video Secundario (Ocupa 1 columna, 1 fila arriba a la derecha) */}
           <Reveal type="fade-left" delay={300} className="md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden relative group border border-slate-700 shadow-2xl">
-            {/* Recuerda cambiar el nombre de este video por el real */}
-            <video 
-              src="/FOTOS_AUTOS/WhatsApp Video 2026-10-26 at 11.09.59 PM.mp4" 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            ></video>
+            <video src="/FOTOS_AUTOS/WhatsApp Video 2026-10-26 at 11.09.59 PM.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></video>
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
               <p className="text-white font-bold">Exhibición de marcas</p>
             </div>
           </Reveal>
 
-          {/* Item 4: Foto Burro Blanco Changan (Ocupa 1 columna, 1 fila centro abajo izquierda) */}
           <Reveal type="fade-up" delay={400} className="md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden relative group border border-slate-700 shadow-2xl">
-            <img 
-              src="/FOTOS_AUTOS/WhatsApp Image 2026-10-26 at 11.10.37 PM.jpeg" 
-              alt="Mascota IPN y Changan" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
+            <img src="/FOTOS_AUTOS/WhatsApp Image 2026-10-26 at 11.10.37 PM.jpeg" alt="Mascota IPN y Changan" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           </Reveal>
 
-          {/* Item 5: Foto GWM Verde (Ocupa 1 columna, 1 fila centro abajo derecha) */}
           <Reveal type="fade-up" delay={500} className="md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden relative group border border-slate-700 shadow-2xl">
-            <img 
-              src="/FOTOS_AUTOS/WhatsApp Image 2026-10-26 at 11.10.19 PM.jpeg" 
-              alt="GWM Verde" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
+            <img src="/FOTOS_AUTOS/WhatsApp Image 2026-10-26 at 11.10.19 PM.jpeg" alt="GWM Verde" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           </Reveal>
 
-          {/* Item 6: Video Ford Territory (Ocupa 1 columna, 1 fila esquina inferior derecha) */}
           <Reveal type="fade-left" delay={600} className="md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden relative group border border-slate-700 shadow-2xl">
-            {/* Recuerda cambiar el nombre de este video por el real */}
-            <video 
-              src="/FOTOS_AUTOS/WhatsApp Video 2026-10-26 at 11.10.09 PM.mp4" 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            ></video>
+            <video src="/FOTOS_AUTOS/WhatsApp Video 2026-10-26 at 11.10.09 PM.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></video>
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
               <p className="text-white font-bold">Ford Territory</p>
             </div>
           </Reveal>
 
+        </div>
+
+        {/* SECCIÓN DE REDES SOCIALES */}
+        <div className="text-center pt-8 border-t border-slate-800">
+          <Reveal type="fade-up">
+            <h4 className="text-xl font-bold text-white mb-6">Síguenos en nuestras redes oficiales</h4>
+            <div className="flex justify-center gap-6">
+              <a href="#" target="_blank" rel="noreferrer" className="p-4 bg-slate-800/80 backdrop-blur-md rounded-full text-slate-300 hover:text-white hover:bg-[#1877F2] transition-all duration-300 hover:scale-110 shadow-lg">
+                <Facebook size={28} />
+              </a>
+              <a href="#" target="_blank" rel="noreferrer" className="p-4 bg-slate-800/80 backdrop-blur-md rounded-full text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] transition-all duration-300 hover:scale-110 shadow-lg">
+                <Instagram size={28} />
+              </a>
+              <a href="#" target="_blank" rel="noreferrer" className="p-4 bg-slate-800/80 backdrop-blur-md rounded-full text-slate-300 hover:text-white hover:bg-[#FF0000] transition-all duration-300 hover:scale-110 shadow-lg">
+                <Youtube size={28} />
+              </a>
+            </div>
+          </Reveal>
         </div>
 
       </div>
