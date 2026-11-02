@@ -5,7 +5,7 @@ import {
   Car, Calendar, MapPin, Mail, Phone, CheckCircle, 
   ArrowRight, Leaf, ShieldCheck, Users, Clock,
   ExternalLink,
-  Timer, Youtube, Instragram, Facebook
+  Timer, Youtube, Instagram, Facebook
 } from 'lucide-react';
 
 const THEME = {
