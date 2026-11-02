@@ -3,8 +3,8 @@ import Sponsors from './Sponsors';
 import { 
   Menu, X, ChevronDown, ChevronUp, Zap, BatteryCharging, 
   Car, Calendar, MapPin, Mail, Phone, CheckCircle, 
-  ArrowRight, Leaf, ShieldCheck, Users, Clock,
-  ExternalLink, Timer, Youtube, Instagram, Facebook
+  ArrowRight, Leaf, ShieldCheck, Users, Youtube, Instagram, Facebook, Clock,
+  ExternalLink, Timer
 } from 'lucide-react';
 
 const THEME = {
