@@ -2,9 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Sponsors from './Sponsors';
 import { 
   Menu, X, Zap, BatteryCharging, 
-  Car, Calendar, MapPin, Mail, Phone, CheckCircle, 
-  ArrowRight, Leaf, ShieldCheck, Users, Youtube, Instagram, Facebook, Clock,
-  ExternalLink, Timer
+  Car, Calendar, MapPin, Mail, Phone, 
+  ArrowRight, Leaf, ShieldCheck, Users, Youtube, Instagram, Facebook
 } from 'lucide-react';
 
 const THEME = {
@@ -89,17 +88,7 @@ const VEHICLES = [
   { id: 172, name: 'MINI Countryman All-Electric', brand: 'MINI', type: 'BEV', range: '462 km (WLTP)', chargeTime: '30 min (10-80%)', image: 'https://www.mini.com.mx/content/dam/MINI/common/Range/new-generation/countryman/bev/bodytype-hub/mini-U25-BEV-stage-wide.avif.asset.1749017837824.avif' },
 ];
 
-const PROGRAM_SCHEDULE = [
-  {
-    date: '15 de Octubre',
-    events: [
-      { time: '09:00', title: 'Inicio de la expo', speaker: 'Acceso General', category: 'Apertura' },
-      { time: '11:15 - 12:30', title: 'De la Innovación a la Acción Climática: Movilidad Sustentable como Motor de la Transición Energética en el IPN: electrolinera solar autónoma como laboratorio viviente para la acción climática', speaker: 'Edgar Maldonado Mosqueda & Luis Enrique Camacho Camacho', category: 'Conferencia' },
-      { time: '17:00', title: 'Cierre o clausura de la expo', speaker: 'Comité Organizador', category: 'Clausura' }
-    ]
-  },
-  
-];
+
 
 
 
