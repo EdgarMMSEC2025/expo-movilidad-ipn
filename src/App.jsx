@@ -4,8 +4,7 @@ import {
   Menu, X, ChevronDown, ChevronUp, Zap, BatteryCharging, 
   Car, Calendar, MapPin, Mail, Phone, CheckCircle, 
   ArrowRight, Leaf, ShieldCheck, Users, Clock,
-  ExternalLink,
-  Timer, Youtube, Instagram, Facebook
+  ExternalLink, Timer, Youtube, Instagram, Facebook
 } from 'lucide-react';
 
 const THEME = {
