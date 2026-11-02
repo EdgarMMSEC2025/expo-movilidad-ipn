@@ -642,7 +642,7 @@ const Program = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <SectionHeading 
           title="Programa Oficial" 
-          subtitle="Acompáñanos la aventuira en nuestras futuras exhibiciones tecnológicas y conferencias."
+          subtitle="Acompáñanos en nuestras futuras exhibiciones tecnológicas y conferencias."
           centered={true}
         />
         
