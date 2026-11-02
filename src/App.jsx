@@ -1004,7 +1004,7 @@ export default function App() {
         <Fleet />
         <Program />
         <Registration />
-        <Evidence />
+        <Evidence/>
              {/* borramos aqui <FAQs />   <-- Así queda oculta la sección de preguntas */}
         <Sponsors/>
       </main>
