@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Sponsors from './Sponsors';
 import { 
-  Menu, X, ChevronDown, ChevronUp, Zap, BatteryCharging, 
+  Menu, X, Zap, BatteryCharging, 
   Car, Calendar, MapPin, Mail, Phone, CheckCircle, 
   ArrowRight, Leaf, ShieldCheck, Users, Youtube, Instagram, Facebook, Clock,
   ExternalLink, Timer
@@ -101,13 +101,7 @@ const PROGRAM_SCHEDULE = [
   
 ];
 
-const FAQS = [
-  { q: '¿Cómo llegar al evento?', a: 'Deberás ingresar por la puerta ubicada en Av. Wilfrido Massieu y Manuel de Anda y Barredo. También puedes llegar por el Trolebús que sale del Metro Politécnico.' },
-  { q: '¿El evento tiene algún costo?', a: 'No, la entrada general y el acceso a las conferencias son totalmente gratuitos, previo registro en esta plataforma. Es IMPORTANTE que lleves o muestres tu pase que te llegará por correo' },
-  { q: '¿Quiénes pueden asistir?', a: 'El evento está abierto a toda la comunidad politécnica (estudiantes, docentes, personal) y al público en general interesado en la movilidad sustentable.' },
-  { q: '¿Dónde se llevará a cabo?', a: 'La Expo se realizará en el estacionamiento del edificio 1 de ESIME Zacatenco y el Centro Cultural Jaime Torres Bodet, CDMX.' },
-  { q: '¿Necesito licencia para las pruebas de manejo?', a: 'Sí, para participar en las pruebas de manejo (Test Drives) es obligatorio presentar una licencia de conducir física y vigente.' },
-];
+
 
 const useScrollReveal = (options = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -834,43 +828,7 @@ const Evidence = () => {
   );
 };
 
-const FAQs = () => {
-  const [openIndex, setOpenIndex] = useState(0);
 
-  return (
-    <section className="py-24 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading title="Preguntas Frecuentes" subtitle="Resolvemos tus dudas principales sobre la logística y participación en la Expo." />
-        
-        <div className="space-y-4">
-          {FAQS.map((faq, index) => (
-            <Reveal key={index} type="fade-up" delay={index * 100}>
-              <div 
-                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'border-[#6A0032] shadow-lg ring-1 ring-[#6A0032]/20' : 'border-slate-200 hover:border-slate-300 bg-slate-50/50'}`}
-              >
-                <button 
-                  className="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none"
-                  onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                  aria-expanded={openIndex === index}
-                >
-                  <span className={`font-bold text-lg pr-4 ${openIndex === index ? 'text-[#6A0032]' : 'text-slate-800'}`}>{faq.q}</span>
-                  <div className={`p-2 rounded-full transition-colors ${openIndex === index ? 'bg-[#6A0032]/10 text-[#6A0032]' : 'text-slate-400'}`}>
-                    {openIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                  </div>
-                </button>
-                <div 
-                  className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-48 pb-5 opacity-100' : 'max-h-0 opacity-0'}`}
-                >
-                  <p className="text-slate-600 text-base leading-relaxed">{faq.a}</p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const Footer = () => (
   <footer className="bg-[#0F172A] pt-24 pb-12 border-t border-slate-800">
