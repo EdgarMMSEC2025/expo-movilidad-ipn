@@ -390,7 +390,7 @@ const Hero = () => {
         Convertirse en Patrocinador <ArrowRight className="ml-2" size={20} />
       </Button>     {/* Aqui modifique lo de patrocinador */}
        </a>
-        <a href="#program">
+        <a href="#propuesta">
         <Button variant="glass" className="w-full sm:w-auto text-lg px-8 py-4">
         Conocer el Proyecto
         </Button>
