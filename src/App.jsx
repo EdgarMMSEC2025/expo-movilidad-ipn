@@ -884,6 +884,189 @@ const Footer = () => (
   </footer>
 );
 
+const CeremoniaPaneles = () => {
+  return (
+    <section className="py-12 bg-gradient-to-r from-[#6A0032] via-[#4a0023] to-[#0F172A] text-white border-y border-white/10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 bg-white/5 backdrop-blur-md p-6 md:p-8 rounded-2xl border border-white/15 shadow-xl">
+          <div className="flex items-start gap-4">
+            <div className="p-3 bg-[#16A34A]/20 text-[#4ade80] rounded-xl shrink-0">
+              <Zap size={32} />
+            </div>
+            <div>
+              <span className="inline-block px-3 py-1 mb-2 text-xs font-bold uppercase tracking-wider bg-[#16A34A] text-white rounded-full">
+                Próximo Evento
+              </span>
+              <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
+                Ceremonia de Entrega de Paneles Solares
+              </h3>
+              <p className="mt-2 text-slate-200 max-w-2xl text-sm md:text-base">
+                Prepárate para ser parte de un paso histórico en energía limpia y movilidad sustentable dentro del IPN. Muy pronto anunciaremos los detalles de nuestra ceremonia oficial de entrega.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end gap-3 shrink-0 w-full lg:w-auto">
+            <div className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-200 bg-black/30 px-4 py-2.5 rounded-xl border border-white/10">
+              <Calendar className="text-[#4ade80]" size={18} />
+              <span>Fecha próximamente</span>
+            </div>
+            <a
+              href="https://www.instagram.com/reel/Df3i94ptYDa/?jplx=dzd2a2w2eDZoOGph"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#6A0032] font-bold text-sm hover:bg-slate-100 transition-all shadow-md"
+            >
+              <span>Ver adelanto en Instagram</span>
+              <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const PropuestaCarrusel = () => {
+  const [current, setCurrent] = useState(0);
+
+  const slides = [
+    {
+      badge: "Generación Solar",
+      title: "50 Módulos Fotovoltaicos Longi de 610W",
+      desc: "Potencia total instalada de 30.5 kW montados sobre estructura de estacionamiento a 10°, generando aproximadamente 47,375 kWh de energía limpia al año.",
+      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1200"
+    },
+    {
+      badge: "Almacenamiento e Inversores",
+      title: "Respaldo de 96.4 kWh con Victron + PylonTech",
+      desc: "Integración de 6 baterías PylonTech Fidus Plus (16,076 Wh c/u) y 6 inversores Victron Quattro 48/10000 para operar con estabilidad y respaldo energético.",
+      image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&q=80&w=1200"
+    },
+    {
+      badge: "Infraestructura de Carga",
+      title: "4 Estaciones de Carga de 11 kW (220V)",
+      desc: "Cargadores dedicados con estructura metálica e instalación eléctrica completa para abastecer vehículos eléctricos de la comunidad politécnica.",
+      image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=1200"
+    }
+  ];
+
+  const prevSlide = () => setCurrent(current === 0 ? slides.length - 1 : current - 1);
+  const nextSlide = () => setCurrent(current === slides.length - 1 ? 0 : current + 1);
+
+  return (
+    <section id="propuesta" className="py-24 bg-[#0F172A] text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* PRESENTACIÓN EN CONTENIDO DE PROPUESTA (ARRIBA DEL CARRUSEL) */}
+        <div className="bg-slate-900/90 border border-slate-700/70 rounded-3xl p-6 md:p-10 shadow-2xl mb-10">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 bg-[#16A34A]/20 rounded-xl text-[#4ade80]">
+                <Leaf size={24} />
+              </div>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#4ade80] block">
+                  Propuesta Técnica · Vita Energy
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
+                  Presentación: Electrolinera IPN
+                </h3>
+              </div>
+            </div>
+            <span className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider bg-[#6A0032] text-white rounded-full">
+              Sistema Fotovoltaico + Carga EV
+            </span>
+          </div>
+
+          <p className="text-slate-300 leading-relaxed mb-8 text-sm md:text-base">
+            La propuesta contempla el diseño e instalación de una electrolinera sustentable en el IPN impulsada por energía solar, integrando generación fotovoltaica de alta eficiencia, respaldo en baterías y 4 estaciones de carga para vehículos eléctricos.
+          </p>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-slate-800/70 p-4 rounded-2xl border border-slate-700/80">
+              <Zap className="text-[#4ade80] mb-2" size={20} />
+              <p className="text-2xl font-extrabold text-white">30.5 kW</p>
+              <p className="text-xs text-slate-400 mt-1">Potencia total (50 paneles)</p>
+            </div>
+            <div className="bg-slate-800/70 p-4 rounded-2xl border border-slate-700/80">
+              <Leaf className="text-[#4ade80] mb-2" size={20} />
+              <p className="text-2xl font-extrabold text-white">47,375 kWh</p>
+              <p className="text-xs text-slate-400 mt-1">Generación solar anual</p>
+            </div>
+            <div className="bg-slate-800/70 p-4 rounded-2xl border border-slate-700/80">
+              <BatteryCharging className="text-[#4ade80] mb-2" size={20} />
+              <p className="text-2xl font-extrabold text-white">96.4 kWh</p>
+              <p className="text-xs text-slate-400 mt-1">6 baterías PylonTech</p>
+            </div>
+            <div className="bg-slate-800/70 p-4 rounded-2xl border border-slate-700/80">
+              <Car className="text-[#4ade80] mb-2" size={20} />
+              <p className="text-2xl font-extrabold text-white">4 Cargadores</p>
+              <p className="text-xs text-slate-400 mt-1">De 11 kW a 220V</p>
+            </div>
+          </div>
+        </div>
+
+        {/* CARRUSEL INTERACTIVO */}
+        <div className="relative rounded-3xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
+          <div className="relative h-[420px] md:h-[480px] w-full">
+            <img
+              src={slides[current].image}
+              alt={slides[current].title}
+              className="w-full h-full object-cover transition-all duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
+              <span className="inline-block w-fit px-3 py-1 mb-3 text-xs font-bold uppercase tracking-wider bg-[#16A34A] text-white rounded-full">
+                {slides[current].badge}
+              </span>
+              <h4 className="text-2xl md:text-4xl font-extrabold text-white mb-2">
+                {slides[current].title}
+              </h4>
+              <p className="text-slate-200 max-w-2xl text-sm md:text-base">
+                {slides[current].desc}
+              </p>
+            </div>
+          </div>
+
+          {/* Botón Anterior */}
+          <button
+            onClick={prevSlide}
+            aria-label="Anterior"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-[#6A0032] text-white backdrop-blur-md transition-all border border-white/20"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          {/* Botón Siguiente */}
+          <button
+            onClick={nextSlide}
+            aria-label="Siguiente"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-[#6A0032] text-white backdrop-blur-md transition-all border border-white/20"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          {/* Indicadores (puntitos) */}
+          <div className="absolute bottom-4 right-8 flex gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrent(index)}
+                aria-label={`Ir a diapositiva ${index + 1}`}
+                className={`h-2.5 rounded-full transition-all ${
+                  current === index ? 'w-8 bg-[#16A34A]' : 'w-2.5 bg-white/40 hover:bg-white/70'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+
 export default function App() {
   useEffect(() => {
     document.title = "Expo Movilidad Sustentable IPN 2026 | El futuro es eléctrico";
@@ -947,7 +1130,9 @@ export default function App() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <CeremoniaPaneles />
         <About />
+        <PropuestaCarrusel />
         <Fleet />
         <Program />
         <Registration />
